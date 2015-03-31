@@ -1,12 +1,48 @@
-<ion-view view-title="Measurments">
+<ion-view view-title="styleDouble">
     <ion-content class="padding">
         <div class="list card">
-            <div class="item item-divider">API</div>
+            <div class="item item-divider">My Size</div>
             <div class="item item-body">
-                <div>
-                    Measurments
-                </div>
+                Neck
+                <select id="neck" name="weight" ng-model="formData.neck" ng-init="formData.neck='14'">
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                </select>
+                <br /><br />
+                Chest
+                <select id="chest" name="weight" ng-model="formData.chest" ng-init="formData.chest='34'">
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                </select>
+                <br /><br />
+                Waist
+                <select id="waist" name="weight" ng-model="formData.waist" ng-init="formData.waist='30'">
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                </select>
+                <br /><br />
+                Hips
+                    <select id="hips" name="weight" ng-model="formData.hips" ng-init="formData.hips='32'">
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                </select>
+                <br /><br />
             </div>
         </div>
+        <button ng-click="details(this)">Details</button><br /><br />
+        <button ng-click="next(this)">Next</button><br />
+        </form>
+        </div>
+        <br /><br />For debugging: {{formData}}
     </ion-content>
 </ion-view>
