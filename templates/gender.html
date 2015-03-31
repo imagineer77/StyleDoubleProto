@@ -2,13 +2,13 @@
     <ion-content class="padding">
         <form novalidate class="css-form" ng-init="formData.gender='male'">
             <div class="list card">
-                <div class="item item-divider">I am a</div>
+                <div class="item item-divider">I am a  (required)</div>
                     <div class="item item-body">
                         <input type="radio" ng-model="formData.gender" value="male" /> Male<br /><br />
                         <input type="radio" ng-model="formData.gender" value="female" /> Female<br /><br />
                     </div>
                 </div>
-                <div class="item item-divider">Born in</div>
+                <div class="item item-divider">Born in (optional)</div>
                     <div class="item item-body">
                         <!--<div ng-repeat="address in addresses">
                             Billing State:
@@ -17,8 +17,7 @@
                                 ng-options="state.lookupCode as state.description for state in lov_state">
                             </select>
                         </div>-->
-                        <select id="birthyear" name="birthyear" ng-model="formData.birthyear" ng-init="formData.birthyear='1997'">
-                            <option value="2015">2007</option>
+                        <select id="birthyear" name="birthyear" ng-model="formData.birthyear">
                             <option value="2014">2006</option>
                             <option value="2013">2005</option>
                             <option value="2012">2004</option>

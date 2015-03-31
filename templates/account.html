@@ -1,12 +1,29 @@
 <ion-view view-title="styleDouble">
     <ion-content class="padding">
-        <div class="list card">
-            <div class="item item-divider">Account</div>
-            <div class="item item-body">
-                Create account here...
+        <form novalidate  name="formData" class="simple-form">
+            <div class="list card">
+                <div class="item item-divider">Account</div>
+                <div class="item item-body">
+                    Email <input type='email' name='email' ng-model='email' required placeholder="Enter email address">
+                    <span style="color:red" ng-show="formData.email.$dirty && formData.email.$invalid">
+                        <span ng-show="formData.email.$error.required">Email is required!</span>
+                        <span ng-show="formData.email.$error.email">Invalid email address!</span>
+                    </span>
+                    <br />Password <input type='password' name='password' ng-model='password' required placeholder="Enter password">
+                    <span style="color:red" ng-show="formData.password.$dirty">
+                        <span ng-show="formData.password.$error.required">Password is required!</span>
+                    </span>
+                    <br />Verify Password <input type='password' name='passwordx' ng-model='passwordx' required placeholder="Verify password">
+                    <span style="color:red" ng-show="formData.passwordx.$dirty">
+                        <span ng-show="formData.passwordx.$error.required">Verify password is required!</span>
+                    </span>
+                </div>
             </div>
-        </div>
-        <button ng-click="next(this)">Finish</button><br />
-        </div>
+
+            <br /><button ng-disabled="formData.email.$dirty && formData.email.$invalid ||
+                    formData.password.$dirty && formData.password.$invalid ||
+                    formData.passwordx.$dirty && formData.passwordx.$invalid"
+                    ng-click="finish(this)">Finish</button>
+        </form>
     </ion-content>
 </ion-view>
