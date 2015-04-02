@@ -2,7 +2,7 @@ angular.module('styledouble.controllers', [])
 
 .factory('DataStore', function() {
     //create datastore with default values
-    var DataStore = {
+    /*var DataStore = {
         gender:         'male',
         birthyear:      '1997',
         heightfeet:     '5',
@@ -12,7 +12,9 @@ angular.module('styledouble.controllers', [])
         chest:          '34',
         waist:          '30',
         hips:           '32'
-    };
+    };*/
+
+    var DataStore = {};
 
     DataStore.setGender = function (value) {
         DataStore.gender = value;
@@ -67,10 +69,10 @@ angular.module('styledouble.controllers', [])
         var year = i.toString();
         $scope.years.push({value:year, displayName: year});
     }
-    $scope.formData.birthyear = "1995";
+    $scope.formData.birthyear = "2015";
 
     $scope.next = function() {
-        alert("Clicked: " + $scope.formData.gender + ":" + $scope.formData.birthyear);
+        //alert("Clicked: " + $scope.formData.gender + ":" + $scope.formData.birthyear);
         DataStore.setGender($scope.formData.gender);
         DataStore.setBirthYear($scope.formData.birthyear);
         $state.go('tab.height-weight');
@@ -95,18 +97,33 @@ angular.module('styledouble.controllers', [])
     $scope.formData.weight = "80";
 
     $scope.next = function() {
-        alert("Clicked: " + $scope.formData.heightfeet + ":" + $scope.formData.heightinches + ":" + $scope.formData.weight);
+       //alert("Clicked: " + $scope.formData.heightfeet + ":" + $scope.formData.heightinches + ":" + $scope.formData.weight);
         DataStore.setHeightFeet($scope.formData.heightfeet);
         DataStore.setHeightInches($scope.formData.heightinches);
         DataStore.setWeight($scope.formData.weight);
-        $state.go('tab.body-shape');
+
+        if(DataStore.gender === 'female') {
+            $state.go('tab.body-shape-female');
+        }
+        else {
+            $state.go('tab.body-shape-male');
+        };
     };
 })
 
-.controller('BodyShapeCtrl', function($scope, $state, DataStore) {
+.controller('BodyShapeFemaleCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
     $scope.next = function() {
-        alert("Clicked: " );
+        //alert("Clicked: " );
+        // Datastore set values here
+        $state.go('tab.my-sizes');
+    };
+})
+
+.controller('BodyShapeMaleCtrl', function($scope, $state, DataStore) {
+    $scope.formData ={};
+    $scope.next = function() {
+        //alert("Clicked: " );
         // Datastore set values here
         $state.go('tab.my-sizes');
     };
@@ -114,8 +131,8 @@ angular.module('styledouble.controllers', [])
 
 .controller('MeasurementsCtrl', function($scope, $state, DataStore) {
     $scope.setValues = function() {
-        alert("Clicked: " + $scope.formData.neck + ":" + $scope.formData.chest
-        + ":" + $scope.formData.waist + ":" + $scope.formData.hips);
+        /*alert("Clicked: " + $scope.formData.neck + ":" + $scope.formData.chest
+        + ":" + $scope.formData.waist + ":" + $scope.formData.hips);*/
         DataStore.setNeck($scope.formData.neck);
         DataStore.setChest($scope.formData.chest);
         DataStore.setWaist($scope.formData.waist);
@@ -137,7 +154,7 @@ angular.module('styledouble.controllers', [])
 .controller('MeasurementDetailsCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
     $scope.next = function() {
-        alert("Clicked: " );
+        //alert("Clicked: " );
         // Datastore set values here???
         $state.go('tab.my-sizes');
     };
@@ -146,7 +163,7 @@ angular.module('styledouble.controllers', [])
 .controller('MySizesCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
     $scope.next = function() {
-        alert("Clicked: " );
+        //alert("Clicked: " );
         // Datastore set values here
         $state.go('tab.cloth-returns');
     };
@@ -155,7 +172,7 @@ angular.module('styledouble.controllers', [])
 .controller('ClothReturnsCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
     $scope.next = function() {
-        alert("Clicked: " );
+        //alert("Clicked: " );
         // Datastore set values here
         $state.go('tab.account');
     };
@@ -163,17 +180,30 @@ angular.module('styledouble.controllers', [])
 
 .controller('AccountCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
+
+    $scope.isValid = function() {
+        return  $scope.formData.email.length > 0 &&
+                $scope.formData.password.length > 0 &&
+                $scope.formData.passwordx.length > 0;
+    };
+
     $scope.finish = function() {
-        alert("Email: " + $scope.formData.email + "\n"
-                + "Password: " + $scope.formData.password + "\n"
-                + "Password Verify "+ $scope.formData.passwordx + "\n"
-                + "Gender: " + DataStore.gender + "\n"
-                + "Birth year: " + + DataStore.birthyear + "\n"
-                + "Height: " + + DataStore.heightfeet +" ft "+ DataStore.heightinches + " in" + "\n"
-                + "Weight: " + + DataStore.weight + "\n"
-                + "Neck: " + + DataStore.neck + " in" + "\n"
-                + "Chest: " + + DataStore.chest + " in" + "\n"
-                + "Waist: " + + DataStore.waist + " in" + "\n"
-                + "Hips: " + + DataStore.hips + " in");
+        if($scope.formData.password === $scope.formData.passwordx)
+        {
+            alert("Email: " + $scope.formData.email + "\n"
+            + "Password: " + $scope.formData.password + "\n"
+            + "Password Verify " + $scope.formData.passwordx + "\n"
+            + "Gender: " + DataStore.gender + "\n"
+            + "Birth year: " + +DataStore.birthyear + "\n"
+            + "Height: " + +DataStore.heightfeet + " ft " + DataStore.heightinches + " in" + "\n"
+            + "Weight: " + +DataStore.weight + "\n"
+            + "Neck: " + +DataStore.neck + " in" + "\n"
+            + "Chest: " + +DataStore.chest + " in" + "\n"
+            + "Waist: " + +DataStore.waist + " in" + "\n"
+            + "Hips: " + +DataStore.hips + " in");
+        }
+        else {
+            alert("Passwords must match!");
+        }
     };
 });
