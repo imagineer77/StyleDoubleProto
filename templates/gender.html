@@ -1,14 +1,31 @@
 <ion-view view-title="styleDouble">
     <ion-content class="padding">
-        <form novalidate class="css-form" ng-init="formData.gender='male'">
+        <form novalidate class="css-form" ng-init="formData.gender='female'">
             <div class="list card">
-                <div class="item item-divider">I am a  (required)</div>
-                    <div class="item item-body">
+                <div class="item item-divider calm-bg">I am a  (required)</div>
+
+                    <!--<div class="item item-body">
                         <input type="radio" ng-model="formData.gender" value="male" /> Male<br /><br />
                         <input type="radio" ng-model="formData.gender" value="female" /> Female<br /><br />
+                    </div>-->
+                    <div class="list">
+                        <label class="item item-radio">
+                            <input type="radio" ng-model="formData.gender" value="female">
+                            <div class="item-content">
+                                Female
+                            </div>
+                            <i class="radio-icon ion-checkmark"></i>
+                        </label>
+                        <label class="item item-radio">
+                            <input type="radio" ng-model="formData.gender" value="male">
+                            <div class="item-content">
+                                Male
+                            </div>
+                            <i class="radio-icon ion-checkmark"></i>
+                        </label>
                     </div>
-                </div>
-                <div class="item item-divider">Born in (optional)</div>
+            </div>
+                <div class="item item-divider calm-bg">Born in (Optional, but will help us match you)</div>
                     <div class="item item-body">
                         <!--<div ng-repeat="address in addresses">
                             Billing State:
@@ -120,8 +137,9 @@
                             <option value="1915">1915</option>
                         </select>
                     </div>
+                </div>
             <br /><button ng-click="next(this)">Next</button><br />
         </form>
-        <br /><br />For debugging: {{formData}}
+        <!--<br /><br />For debugging: {{formData}}-->
     </ion-content>
 </ion-view>
