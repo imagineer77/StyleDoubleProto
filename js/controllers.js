@@ -53,10 +53,22 @@ angular.module('styledouble.controllers', [])
     return DataStore;
 })
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, $state) {
+    $scope.next = function() {
+        $state.go('tab.gender');
+    };
+})
 
 .controller('GenderCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
+
+    $scope.years = [];
+    for (var i = 2015; i >= 1915; i--) {
+        var year = i.toString();
+        $scope.years.push({value:year, displayName: year});
+    }
+    $scope.formData.birthyear = "1995";
+
     $scope.next = function() {
         alert("Clicked: " + $scope.formData.gender + ":" + $scope.formData.birthyear);
         DataStore.setGender($scope.formData.gender);
@@ -67,12 +79,36 @@ angular.module('styledouble.controllers', [])
 
 .controller('HeightWeightCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
+
+    $scope.inches = [];
+    for (var i = 0; i <= 11; i++) {
+        var ins = i.toString();
+        $scope.inches.push({value:ins, displayName: ins});
+    }
+    $scope.formData.heightinches = "0";
+
+    $scope.weights = [];
+    for (var i = 80; i <= 250; i++) {
+        var lbs = i.toString();
+        $scope.weights.push({value:lbs, displayName: lbs});
+    }
+    $scope.formData.weight = "80";
+
     $scope.next = function() {
         alert("Clicked: " + $scope.formData.heightfeet + ":" + $scope.formData.heightinches + ":" + $scope.formData.weight);
         DataStore.setHeightFeet($scope.formData.heightfeet);
         DataStore.setHeightInches($scope.formData.heightinches);
         DataStore.setWeight($scope.formData.weight);
-        $state.go('tab.measurements');
+        $state.go('tab.body-shape');
+    };
+})
+
+.controller('BodyShapeCtrl', function($scope, $state, DataStore) {
+    $scope.formData ={};
+    $scope.next = function() {
+        alert("Clicked: " );
+        // Datastore set values here
+        $state.go('tab.my-sizes');
     };
 })
 
@@ -126,21 +162,18 @@ angular.module('styledouble.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope, $state, DataStore) {
-        $scope.email = 'john.doe@gmail.com';
-        $scope.password = 'password';
-        $scope.passwordx = 'verify';
-        $scope.formData ={};
-        $scope.finish = function() {
-            alert("Email: " + $scope.formData.email + "\n"
-                    + "Password: " + $scope.formData.password + "\n"
-                    + "Password Verify "+ $scope.formData.passwordx + "\n"
-                    + "Gender: " + DataStore.gender + "\n"
-                    + "Birth year: " + + DataStore.birthyear + "\n"
-                    + "Height: " + + DataStore.heightfeet +" ft "+ DataStore.heightinches + " in" + "\n"
-                    + "Weight: " + + DataStore.weight + "\n"
-                    + "Neck: " + + DataStore.neck + " in" + "\n"
-                    + "Chest: " + + DataStore.chest + " in" + "\n"
-                    + "Waist: " + + DataStore.waist + " in" + "\n"
-                    + "Hips: " + + DataStore.hips + " in");
-        };
+    $scope.formData ={};
+    $scope.finish = function() {
+        alert("Email: " + $scope.formData.email + "\n"
+                + "Password: " + $scope.formData.password + "\n"
+                + "Password Verify "+ $scope.formData.passwordx + "\n"
+                + "Gender: " + DataStore.gender + "\n"
+                + "Birth year: " + + DataStore.birthyear + "\n"
+                + "Height: " + + DataStore.heightfeet +" ft "+ DataStore.heightinches + " in" + "\n"
+                + "Weight: " + + DataStore.weight + "\n"
+                + "Neck: " + + DataStore.neck + " in" + "\n"
+                + "Chest: " + + DataStore.chest + " in" + "\n"
+                + "Waist: " + + DataStore.waist + " in" + "\n"
+                + "Hips: " + + DataStore.hips + " in");
+    };
 });

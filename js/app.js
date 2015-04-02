@@ -42,7 +42,6 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers'])
     }
   })
 
-
   .state('tab.gender', {
       url: "/gender",
       views: {
@@ -63,13 +62,22 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers'])
       }
   })
 
+  .state('tab.body-shape', {
+      url: "/body-shape",
+      views: {
+          'body-shape': {
+              templateUrl: 'templates/body-shape.html',
+              controller: 'BodyShapeCtrl'
+          }
+      }
+  })
+
   .state('tab.measurements', {
       url: '/measurements',
       views: {
           'measurements': {
               templateUrl: 'templates/measurements.html',
-              controller: 'MeasurementsCtrl',
-              disabled: true
+              controller: 'MeasurementsCtrl'
           }
       }
   })

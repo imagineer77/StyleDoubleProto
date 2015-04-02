@@ -2,38 +2,36 @@
     <ion-content class="padding">
         <form novalidate class="css-form">
             <div class="list card">
-                <div class="item item-divider">My height  (required)</div>
-                <div class="item item-body">
-                    <div>
-                        <select id="heightfeet" name="weight" ng-model="formData.heightfeet"ng-init="formData.heightfeet='5'">
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                        </select>
-                        ft
-                        <select id="heightinches" name="weight" ng-model="formData.heightinches" ng-init="formData.heightinches='0'">
-                            <option svalue="0"> 0</option>
-                            <option value="1"> 1</option>
-                            <option value="2"> 2</option>
-                            <option value="3"> 3</option>
-                        </select>
-                        inches
+                <div class="item item-divider calm-bg">My height  (required)</div>
+                    <div class="item item-body">
+                        <div>
+                            <select id="heightfeet" name="heightfeet" ng-model="formData.heightfeet" ng-init="formData.heightfeet='5'">
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                            ft
+                            <select ng-model="formData.heightinches">
+                                <option ng-repeat="inch in inches" title="{{inch.title}}" value="{{inch.value}}">
+                                    {{inch.displayName}}
+                                </option>
+                            </select>
+                            inches
+                        </div>
                     </div>
                 </div>
-                <div class="item item-divider">My weight  (Required)</div>
+                <div class="item item-divider calm-bg">My weight  (Required)</div>
                 <div class="item item-body">
-                    <select id="weight" name="weight" ng-model="formData.weight"ng-init="formData.weight='100'">
-                        <option value="90">90</option>
-                        <option value="95">95</option>
-                        <option value="100">100</option>
-                        <option value="105">105</option>
+                    <select ng-model="formData.weight">
+                        <option ng-repeat="weight in weights" title="{{weight.title}}" value="{{weight.value}}">
+                                {{weight.displayName}}
+                        </option>
                     </select>
                     lbs
                 </div>
-            </div>
-            <button ng-click="next(this)">Next</button><br />
-        </form>
+            <br /><button ng-click="next(this)">Next</button><br />
         </div>
-        <br /><br />For debugging: {{formData}}
+    </form>
+        <!--<br /><br />For debugging: {{formData}}-->
     </ion-content>
 </ion-view>

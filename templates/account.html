@@ -1,6 +1,6 @@
 <ion-view view-title="styleDouble">
     <ion-content class="padding">
-        <form novalidate  name="formData" class="simple-form">
+        <!--<form novalidate  name="formData" class="simple-form">
             <div class="list card">
                 <div class="item item-divider">Account</div>
                 <div class="item item-body">
@@ -24,6 +24,28 @@
                     formData.password.$dirty && formData.password.$invalid ||
                     formData.passwordx.$dirty && formData.passwordx.$invalid"
                     ng-click="finish(this)">Finish</button>
-        </form>
+        </form>-->
+        <form>
+            <div class="list card">
+                <div class="item item-divider calm-bg">Create Account</div>
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Email</span>
+                            <input type='email' name='email' ng-model='email' required placeholder="Email">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Password</span>
+                            <input type='password' name='password' ng-model='password' required placeholder="Password">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Password</span>
+                            <input type='password' name='passwordx' ng-model='passwordx' required placeholder="Verify Password">
+                        </label>
+                    </div>
+                </div>
+                <button ng-click="finish(this)">
+                    Next
+                </button>
+            </form>
     </ion-content>
 </ion-view>
