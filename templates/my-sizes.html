@@ -3,10 +3,170 @@
         <div class="list card">
             <div class="item item-divider calm-bg">My Sizes</div>
             <div class="item item-body">
-                My Sizes go here...
+				<table style="width:60%">
+					<thead>
+					<tr>
+						<td></td>
+						<td><p style="font-size:8px; color:gray"><b>min</b></p></td> 
+						<td><p style="font-size:8px; color:gray"><b>max</b></p></td>
+						<td><p style="font-size:8px; color:gray"><b>typical</b></p></td>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td><p style="font-size:12px; color:gray"><b>Gap:</b></p></td>
+						<td>
+							<select id="gap-min" name="gap-min" ng-model="formData.gap-min" ng-init="formData.gap-min='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+						<td>
+							<select id="gap-max" name="gap-max" ng-model="formData.gap-max" ng-init="formData.gap-max='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+						<td>
+							<select id="gap-typical" name="gap-typical" ng-model="formData.gap-typical" ng-init="formData.gap-typical='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+					</tr>
+					<tr>
+						<td><p style="font-size:12px; color:gray"><b>H&M:</b></p></td>
+						<td>
+							<select id="hnm-min" name="hnm-min" ng-model="formData.hnm-min" ng-init="formData.hnm-min='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+						<td>
+							<select id="hnm-max" name="hnm-max" ng-model="formData.hnm-max" ng-init="formData.hnm-max='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+						<td>
+							<select id="hnm-typical" name="hnm-typical" ng-model="formData.hnm-typical" ng-init="formData.hnm-typical='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+					</tr>
+					<tr>
+						<td><p style="font-size:12px; color:gray"><b>Express:</b></p></td>
+						<td>
+							<select id="express-min" name="express-min" ng-model="formData.express-min" ng-init="formData.express-min='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+						<td>
+							<select id="express-max" name="express-max" ng-model="formData.express-max" ng-init="formData.express-max='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+						<td>
+							<select id="express-typical" name="express-typical" ng-model="formData.express-typical" ng-init="formData.express-typical='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+					</tr>
+					<tr>
+						<td><p style="font-size:12px; color:gray"><b>Ann  Taylor:</b></p></td>
+						<td>
+							<select id="ataylor-min" name="ataylor-min" ng-model="formData.ataylor-min" ng-init="formData.ataylor-min='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+						<td>
+							<select id="ataylor-max" name="ataylor-max" ng-model="formData.ataylor-max" ng-init="formData.ataylor-max='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+						<td>
+							<select id="ataylor-typical" name="ataylor-typical" ng-model="formData.ataylor-typical" ng-init="formData.ataylor-typical='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+					</tr>
+					<tr>
+						<td><p style="font-size:12px; color:gray"><b>A|X:</b></p></td>
+						<td>
+							<select id="ax-min" name="ax-min" ng-model="formData.ax-min" ng-init="formData.ax-min='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+						<td>
+							<select id="ax-max" name="ax-max" ng-model="formData.ax-max" ng-init="formData.ax-max='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+						<td>
+							<select id="ax-typical" name="ax-typical" ng-model="formData.ax-typical" ng-init="formData.ax-typical='0'">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td> 
+					</tr>
+					</tbody>
+				</table>
             </div>
         </div>
         <button ng-click="next(this)">Next</button><br />
-        </div>
     </ion-content>
 </ion-view>
