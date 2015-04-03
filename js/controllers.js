@@ -116,7 +116,7 @@ angular.module('styledouble.controllers', [])
     $scope.next = function() {
         //alert("Clicked: " );
         // Datastore set values here
-        $state.go('tab.my-sizes');
+        $state.go('tab.measurements');
     };
 })
 
@@ -125,7 +125,7 @@ angular.module('styledouble.controllers', [])
     $scope.next = function() {
         //alert("Clicked: " );
         // Datastore set values here
-        $state.go('tab.my-sizes');
+        $state.go('tab.measurements');
     };
 })
 
@@ -142,7 +142,7 @@ angular.module('styledouble.controllers', [])
     $scope.formData ={};
     $scope.next = function() {
         this.setValues();
-        $state.go('tab.my-sizes');
+        $state.go('tab.brands-like');
     };
 
     $scope.details = function() {
@@ -156,6 +156,15 @@ angular.module('styledouble.controllers', [])
     $scope.next = function() {
         //alert("Clicked: " );
         // Datastore set values here???
+        $state.go('tab.brands-like');
+    };
+})
+
+.controller('BrandsLikeCtrl', function($scope, $state, DataStore) {
+    $scope.formData ={};
+    $scope.next = function() {
+        //alert("Clicked: " );
+        // Datastore set values here
         $state.go('tab.my-sizes');
     };
 })
