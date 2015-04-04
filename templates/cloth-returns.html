@@ -1,4 +1,13 @@
 <ion-view view-title="styleDouble">
+					<!-- http://stackoverflow.com/questions/9971740/aligning-a-button-to-the-center -->
+					<!-- http://stackoverflow.com/questions/11799159/trying-to-align-html-button-at-the-center-of-the-my-page -->
+					<!-- http://www.w3schools.com/cssref/pr_text_text-align.asp -->
+					<!-- text-align: left|right|center|justify|initial|inherit; -->
+							<!--http://www.w3schools.com/tags/att_input_align.asp -->
+							<!-- input align="left|right|middle|top|bottom" -->
+							<!-- css style: input type="image" style="float:right" -->
+							<!-- http://www.w3schools.com/cssref/pr_class_float.asp -->
+							<!-- float: none|left|right|initial|inherit; -->
 <!-- script type="text/javascript" -->
 <!--
 <script>
@@ -12,13 +21,107 @@
 //-->
     <ion-content class="padding">
         <div class="list card">
-            <div class="item item-divider calm-bg">Cloth Returns</div>
+			<div class="item item-divider item-header item-calm">
+				<h2 class="title">Cloth Returns</h2>
+			</div>
             <div class="item item-body">
+				<div class="row">
+                    <div class="col"></div>
+					<div class="col" style='text-align:right'><div class='rotate-90-anticlockwise'><p style="font-family:courier; font-size:6px; color:gray"><b>never&nbsp;&nbsp;&nbsp;&nbsp;</b></p></div></div>
+					<div class="col" style='text-align:right'><div class='rotate-90-anticlockwise'><p style="font-family:courier; font-size:6px; color:gray"><b>rare&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></p></div></div>
+					<div class="col" style='text-align:right'><div class='rotate-90-anticlockwise'><p style="font-family:courier; font-size:6px; color:gray"><b>sometimes</b></p></div></div>
+					<div class="col" style='text-align:right'><div class='rotate-90-anticlockwise'><p style="font-family:courier; font-size:6px; color:gray"><b>often&nbsp;&nbsp;&nbsp;&nbsp;</b></p></div></div>
+				</div>
+				<div class="row">
+                    <div class="col" style='text-align:center-left'><b><p style='font-size:10px; color:gray'>Gap:</p></b></div>
+                    <!-- http://ionicframework.com/docs/components/#radio-buttons -->
+                    <!--
+                    <div class="col">
+                        <label class="item item-radio">
+                            <input type="radio" name="group">
+                                <div class="item-content"></div>
+                            <i class="radio-icon ion-checkmark"></i>
+                        </label>
+                    </div>
+                    -->
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="gap_return" value="never"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="gap_return" value="rare"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="gap_return" value="sometimes"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="gap_return" value="often"></p>
+                    </div>
+				</div>
+				<div class="row">
+                    <div class="col" style='text-align:center-left'><b><p style='font-size:10px; color:gray'>H&M:</p></b></div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="hnm_return" value="never"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="hnm_return" value="rare"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="hnm_return" value="sometimes"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="hnm_return" value="often"></p>
+                    </div>
+				</div>
+				<div class="row">
+                    <div class="col" style='text-align:center-left'><b><p style='font-size:10px; color:gray'>Express:</p></b></div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="express_return" value="never"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="express_return" value="rare"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="express_return" value="sometimes"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="express_return" value="often"></p>
+                    </div>
+				</div>
+				<div class="row">
+                    <div class="col" style='text-align:center-left'><b><p style='font-size:10px; color:gray'>Ann Taylor:</p></b></div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="ann_taylor_return" value="never"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="ann_taylor_return" value="rare"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="ann_taylor_return" value="sometimes"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="ann_taylor_return" value="often"></p>
+                    </div>
+				</div>
+				<div class="row">
+                    <div class="col" style='text-align:center-left'><b><p style='font-size:10px; color:gray'>A|X:</p></b></div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="ax_return" value="never"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="ax_return" value="rare"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="ax_return" value="sometimes"></p>
+                    </div>
+                    <div class="col" style='text-align:center'>
+                        <p><input type="radio" name="ax_return" value="often"></p>
+                    </div>
+				</div>
+            </div>
+<!--
+			<div class="item item-divider calm-bg">Cloth Returns</div>
+            <div class="item item-body">			
 				<table style="width:80%">
-					<!-- http://stackoverflow.com/questions/9971740/aligning-a-button-to-the-center -->
-					<!-- http://stackoverflow.com/questions/11799159/trying-to-align-html-button-at-the-center-of-the-my-page -->
-					<!-- http://www.w3schools.com/cssref/pr_text_text-align.asp -->
-					<!-- text-align: left|right|center|justify|initial|inherit; -->
 					<thead>
 					<tr>
 						<th></th>
@@ -28,33 +131,10 @@
 						<th><div style='text-align:right' class='rotate-90-anticlockwise'><p style="font-family:courier; font-size:8px; color:gray"><b>often&nbsp;&nbsp;&nbsp;</b></p></div></th>
 					</tr>
 					</thead>
-					<!--
-					<tr>
-						<th></th>
-						<th><div style='text-align:left'>never</div></th> 
-						<th><div style='text-align:left'>rare</div></th>
-						<th><div style='text-align:left'>some</div></th>
-						<th><div style='text-align:left'>often</div></th>
-					</tr>
-					-->
 					<tbody>
-					<!--
-					<tr>
-						<td><div style='text-align:left'><p style="font-size:12px; color:gray"><b>-</b></p></div></td>
-						<td><div style='text-align:left'><p style="font-size:12px; color:gray"><b>-</b></p></div></td>
-						<td><div style='text-align:left'><p style="font-size:12px; color:gray"><b>-</b></p></div></td>
-						<td><div style='text-align:left'><p style="font-size:12px; color:gray"><b>-</b></p></div></td>
-						<td><div style='text-align:left'><p style="font-size:12px; color:gray"><b>-</b></p></div></td>
-					</tr>
-					-->
 					<tr>
 						<td><div style='text-align:left'><p style="font-size:12px; color:gray"><b>Gap:</b></p></div></td>
 						<td>
-							<!--http://www.w3schools.com/tags/att_input_align.asp -->
-							<!-- input align="left|right|middle|top|bottom" -->
-							<!-- css style: input type="image" style="float:right" -->
-							<!-- http://www.w3schools.com/cssref/pr_class_float.asp -->
-							<!-- float: none|left|right|initial|inherit; -->
 							<div style='text-align:center'><input type="radio" name="gap-return" value="never"></div>
 						</td> 
 						<td>
@@ -130,6 +210,7 @@
 					</tbody>
 				</table>
             </div>
+-->
         </div>
         <button ng-click="next(this)">Next</button><br />
     </ion-content>

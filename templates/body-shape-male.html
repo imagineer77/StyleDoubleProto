@@ -1,5 +1,6 @@
 <ion-view view-title="styleDouble">
     <ion-content class="padding">
+      <form novalidate class="css-form">
         <div class="list card">
             <div class="item item-divider calm-bg">My body shape is</div>
             <div class="item item-body">
@@ -7,6 +8,10 @@
             </div>
         </div>
         <button ng-click="next(this)">Next</button><br />
+        <!-- <button ng-click="next(this)">{{tempGender.value == 'female' ? "(Disabled - 'Female' entered in Intro)" : 'Next'}}</button><br /> -->
         </div>
+      </form>
+      <br /><br />For debugging: {{tempGender}}
+      <br /><br />For debugging: {{formData}}
     </ion-content>
 </ion-view>

@@ -51,7 +51,11 @@ angular.module('styledouble.controllers', [])
     DataStore.setHips = function (value) {
         DataStore.hips = value;
     };
-
+/*
+    DataStore.setGapMin = function (value) {
+        DataStore.gapmin = value;
+    };
+*/
     return DataStore;
 })
 
@@ -63,7 +67,15 @@ angular.module('styledouble.controllers', [])
 
 .controller('GenderCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
-
+/*
+    // if use this, values need to be carefully reset
+    $scope.tempGender = {};
+    if(DataStore.gender === 'female' || $scope.formData.gender === 'female') {
+        $scope.tempGender = { value: 'female' };
+    } else {
+        $scope.tempGender = { value: 'male' };
+    }
+*/
     $scope.years = [];
     for (var i = 2015; i >= 1915; i--) {
         var year = i.toString();
@@ -113,19 +125,45 @@ angular.module('styledouble.controllers', [])
 
 .controller('BodyShapeFemaleCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
+/*
+    // if use this, values need to be carefully reset
+    $scope.tempGender = {};
+    if(DataStore.gender === 'female') {
+        $scope.tempGender = { value: 'female' };
+    } else {
+        $scope.tempGender = { value: 'male' };
+    }
+*/
     $scope.next = function() {
         //alert("Clicked: " );
         // Datastore set values here
-        $state.go('tab.measurements');
+        if(DataStore.gender === 'female') {
+          $state.go('tab.measurements');
+        } else {
+          $state.go('tab.gender');
+        }
     };
 })
 
 .controller('BodyShapeMaleCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
+/*
+    // if use this, values need to be carefully reset
+    $scope.tempGender = {};
+    if(DataStore.gender === 'male') {
+        $scope.tempGender = { value: 'male' };
+    } else {
+        $scope.tempGender = { value: 'female' };
+    }
+*/
     $scope.next = function() {
         //alert("Clicked: " );
         // Datastore set values here
-        $state.go('tab.measurements');
+        if(DataStore.gender === 'male') {
+          $state.go('tab.measurements');
+        } else {
+          $state.go('tab.gender');
+        }
     };
 })
 

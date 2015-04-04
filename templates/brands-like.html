@@ -1,7 +1,55 @@
 <ion-view view-title="styleDouble">
     <ion-content class="padding">
         <div class="list card">
-            <div class="item item-divider">Brands I Like</div>
+			<div class="item item-divider item-header item-calm">
+				<h2 class="title">Brands I Like (ionic)</h2>
+			</div>
+            <div class="item item-body">
+				<ul class="list">
+					<li class="item item-checkbox">
+						<label class="checkbox">
+							<input type="checkbox" name="like-gap" value="like-gap">
+						</label>
+						Gap
+					</li>
+				</ul>
+				<ul class="list">
+					<li class="item item-checkbox">
+						<label class="checkbox">
+							<input type="checkbox" name="like-hnm" value="like-hnm">
+						</label>
+						H&M
+					</li>
+				</ul>
+				<ul class="list">
+					<li class="item item-checkbox">
+						<label class="checkbox">
+							<input type="checkbox" name="like-express" value="like-express">
+						</label>
+						Express
+					</li>
+				</ul>
+				<ul class="list">
+					<li class="item item-checkbox">
+						<label class="checkbox">
+							<input type="checkbox" name="like-ataylor" value="like-ataylor">
+						</label>
+						Ann Taylor
+					</li>
+				</ul>
+				<ul class="list">
+					<li class="item item-checkbox">
+						<label class="checkbox">
+							<input type="checkbox" name="like-ax" value="like-ax">
+						</label>
+						A|X
+					</li>
+				</ul>
+			</div>
+            <!--
+			<div class="item item-divider item-header item-calm">
+				<h2 class="title">Brands I Like (regular)</h2>
+			</div>
             <div class="item item-body">
 				<table style="width:30%">
 					<tbody>
@@ -28,8 +76,11 @@
 					</tbody>
 				</table>
             </div>
+            -->
         </div>
         <button ng-click="next(this)">Next</button><br />
-        </div>
+        <!--
+        <button ng-click="next(this)" class="button button-calm">Next</button><br />
+        -->
     </ion-content>
 </ion-view>

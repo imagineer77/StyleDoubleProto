@@ -1,8 +1,197 @@
 <ion-view view-title="styleDouble">
     <ion-content class="padding">
         <div class="list card">
-            <div class="item item-divider calm-bg">My Sizes</div>
-            <div class="item item-body">
+			<div class="item item-divider item-header item-calm">
+				<h2 class="title">My Sizes</h2>
+			</div>
+			<div class="item item-body">
+				<div class="row">
+					<div class="col"></div>
+					<div class="col"><p style="font-size:8px; color:gray"><b>min</b></p></div>
+					<div class="col"><p style="font-size:8px; color:gray"><b>max</b></p></div>
+					<div class="col"><p style="font-size:8px; color:gray"><b>typical</b></p></div>
+				</div>
+				<div class="row" style="font-size:12px; color:gray">
+					<div class="col">
+                        <b>Gap:</b>
+					</div>
+					<div class="col">
+                        <!-- somehow can't make this to work/display -->
+                        <!-- http://ionicframework.com/docs/components/#select -->
+                        <!--
+                        <label class="item item-input item-select">
+                            <div class="input-label"></div>
+                            <select>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </label>
+                        -->
+                            <!-- it doesn't like '-', use '_' instead
+                            <select id="gap-size-min" name="gap-size-min" ng-model="formData.gap-size-min" ng-init="formData.gap-size-min='0'"> 
+                            -->
+                            <select id="gap_size_min" name="gap_size_min" ng-model="formData.gap_size_min" ng-init="formData.gap_size_min='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+					<div class="col">
+                            <select id="gap_size_max" name="gap_size_max" ng-model="formData.gap_size_max" ng-init="formData.gap_size_max='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+					<div class="col">
+                            <select id="gap_size_typical" name="gap_size_typical" ng-model="formData.gap_size_typical" ng-init="formData.gap_size_typical='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+				</div>
+				<div class="row" style="font-size:12px; color:gray">
+					<div class="col">
+                        <b>H&M:</b>
+					</div>
+					<div class="col">
+                            <select id="hnm_size_min" name="hnm_size_min" ng-model="formData.hnm_size_min" ng-init="formData.hnm_size_min='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+					<div class="col">
+                            <select id="hnm_size_max" name="hnm_size_max" ng-model="formData.hnm_size_max" ng-init="formData.hnm_size_max='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+					<div class="col">
+                            <select id="hnm_size_typical" name="hnm_size_typical" ng-model="formData.hnm_size_typical" ng-init="formData.hnm_size_typical='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+				</div>
+				<div class="row" style="font-size:12px; color:gray">
+					<div class="col">
+                        <b>Express:</b>
+					</div>
+					<div class="col">
+                            <select id="gap_size_min" name="express_size_min" ng-model="formData.express_size_min" ng-init="formData.express_size_min='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+					<div class="col">
+                            <select id="gap_size_max" name="express_size_max" ng-model="formData.express_size_max" ng-init="formData.express_size_max='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+					<div class="col">
+                            <select id="gap_size_typical" name="express_size_typical" ng-model="formData.express_size_typical" ng-init="formData.express_size_typical='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+				</div>
+				<div class="row" style="font-size:12px; color:gray">
+					<div class="col">
+                        <b>Ann Taylor:</b>
+					</div>
+					<div class="col">
+                            <select id="ann_taylor_size_min" name="ann_taylor_size_min" ng-model="formData.ann_taylor_size_min" ng-init="formData.ann_taylor_size_min='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+					<div class="col">
+                            <select id="ann_taylor_size_max" name="ann_taylor_size_max" ng-model="formData.ann_taylor_size_max" ng-init="formData.ann_taylor_size_max='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+					<div class="col">
+                            <select id="ann_taylor_size_typical" name="ann_taylor_size_typical" ng-model="formData.ann_taylor_size_typical" ng-init="formData.ann_taylor_size_typical='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+				</div>
+				<div class="row" style="font-size:12px; color:gray">
+					<div class="col">
+                        <b>A|X:</b>
+					</div>
+					<div class="col">
+                            <select id="ax_size_min" name="ax_size_min" ng-model="formData.ax_size_min" ng-init="formData.ax_size_min='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+					<div class="col">
+                            <select id="ax_size_max" name="ax_size_max" ng-model="formData.ax_size_max" ng-init="formData.ax_size_max='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+					<div class="col">
+                            <select id="ax_size_typical" name="ax_size_typical" ng-model="formData.ax_size_typical" ng-init="formData.ax_size_typical='0'"> 
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+					</div>
+				</div>
+			</div>
+<!--
+			<div class="item item-divider calm-bg">My Sizes</div>
+            <div class="item item-body">			
 				<table style="width:60%">
 					<thead>
 					<tr>
@@ -166,6 +355,7 @@
 					</tbody>
 				</table>
             </div>
+-->
         </div>
         <button ng-click="next(this)">Next</button><br />
     </ion-content>
