@@ -4,14 +4,58 @@
         <div class="list card">
             <div class="item item-divider calm-bg">My body shape is</div>
             <div class="item item-body">
-                Male
+                Male Body Shapes:
+            </div>
+            <div class="list">
+                <label class="item item-radio">
+                    <input type="radio" name="male_body_shape">
+                    <div class="item-content item-text-wrap" style='font-size:10px; color:gray'>
+                        <b>1) Oval</b> <br/>
+                        (appearance is round particularly in midsection, may have narrower shoulders)
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="male_body_shape">
+                    <div class="item-content item-text-wrap" style='font-size:10px; color:gray'>
+                        <b>2) Triangle</b> <br/>
+                        (upper hips and lower midsection are larger than rest of body)
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="male_body_shape">
+                    <div class="item-content item-text-wrap" style='font-size:10px; color:gray'>
+                        <b>3) Inverted Triangle</b> <br/>
+                        (broad shoulders and chest with much narrower hips and waist, common for body builders)
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="male_body_shape">
+                    <div class="item-content item-text-wrap" style='font-size:10px; color:gray'>
+                        <b>4) Trapezoid</b> <br/>
+                        (similar to inverted triangle with broad shoulders and chest relative to narrower hips and waist but having more balance between upper and lower body. most proportional body type)
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="male_body_shape">
+                    <div class="item-content item-text-wrap" style='font-size:10px; color:gray'>
+                        <b>5) Rectangle</b> <br/>
+                        (shoulders are same or similar width as waist and hips)
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
             </div>
         </div>
         <button ng-click="next(this)">Next</button><br />
         <!-- <button ng-click="next(this)">{{tempGender.value == 'female' ? "(Disabled - 'Female' entered in Intro)" : 'Next'}}</button><br /> -->
         </div>
       </form>
+      <!--
       <br /><br />For debugging: {{tempGender}}
       <br /><br />For debugging: {{formData}}
+      -->
     </ion-content>
 </ion-view>
