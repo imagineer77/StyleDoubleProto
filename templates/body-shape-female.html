@@ -3,13 +3,57 @@
         <div class="list card">
             <div class="item item-divider calm-bg">My body shape is</div>
             <div class="item item-body">
-                Female
+                Female Body Shapes:
+            </div>
+            <div class="list">
+                <label class="item item-radio">
+                    <input type="radio" name="female_body_shape">
+                    <div class="item-content">
+                        1) Apple <br/>
+                        (most of weight is carried around stomach and bust with little waist definition, may have slender legs)
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="female_body_shape">
+                    <div class="item-content">
+                        2) Pear <br/>
+                        (hips are larger than bust with weight tending to be carried mostly in hips and thighs)
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="female_body_shape">
+                    <div class="item-content">
+                        3) Rectangle <br/>
+                        (less waist definition with bust and hips approximately the same size)
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="female_body_shape">
+                    <div class="item-content">
+                        4) Inverted Triangle <br/>
+                        (shoulders and bust are broader than hips)
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="female_body_shape">
+                    <div class="item-content">
+                        5) Hourglass <br/>
+                        (bust and hips approximately the same size with a very clearly defined waist)
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
             </div>
         </div>
         <button ng-click="next(this)">Next</button><br />
         <!-- <button ng-click="next(this)">{{(tempGender.value === 'male') ? "(Disabled - 'Male' entered in Intro)" : 'Next'}}</button><br /> -->
         </div>
+        <!--
         <br /><br />For debugging: {{tempGender}}
         <br /><br />For debugging: {{formData}}
+        -->
     </ion-content>
 </ion-view>
