@@ -34,3 +34,11 @@ tr:nth-of-type(5) td:nth-of-type(1) {
              filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083);  /* IE6,IE7 */
          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)"; /* IE8 */
 }
+/* http://stackoverflow.com/questions/22057281/hover-over-text-to-show-more-text */
+.hover-extra { 
+    display: none;
+}
+/* p or div */
+p:hover .hover-extra {
+    display: inline-block;
+}
