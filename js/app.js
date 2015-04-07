@@ -62,12 +62,23 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers'])
       }
   })
 
-  .state('tab.body-shape', {
-      url: "/body-shape",
+  .state('tab.body-shape-female', {
+      url: "/body-shape-female",
       views: {
           'body-shape': {
-              templateUrl: 'templates/body-shape.html',
-              controller: 'BodyShapeCtrl'
+              templateUrl: 'templates/body-shape-female.html',
+              controller: 'BodyShapeFemaleCtrl'
+          }
+      }
+  })
+
+
+  .state('tab.body-shape-male', {
+      url: "/body-shape-male",
+      views: {
+          'body-shape': {
+              templateUrl: 'templates/body-shape-male.html',
+              controller: 'BodyShapeMaleCtrl'
           }
       }
   })
