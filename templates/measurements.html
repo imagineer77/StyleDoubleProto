@@ -37,12 +37,22 @@
                     <option value="34">34</option>
                 </select>
                 <br /><br />
+                Inseam
+					<!-- http://en.wikipedia.org/wiki/Clothing_sizes -->
+				    <!-- http://en.wikipedia.org/wiki/US_standard_clothing_size -->
+                    <select id="inseam" name="inseam" ng-model="formData.inseam">
+					<option value="29">29</option>
+					<option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                </select>
+                <br /><br />
             </div>
         </div>
         <button ng-click="details(this)">Details</button><br /><br />
         <button ng-click="next(this)">Next</button><br />
-        </form>
-        </div>
         <br /><br />For debugging: {{formData}}
     </ion-content>
 </ion-view>

@@ -51,7 +51,11 @@ angular.module('styledouble.controllers', [])
     DataStore.setHips = function (value) {
         DataStore.hips = value;
     };
-
+/*
+    DataStore.setGapMin = function (value) {
+        DataStore.gapmin = value;
+    };
+*/
     return DataStore;
 })
 
@@ -63,7 +67,15 @@ angular.module('styledouble.controllers', [])
 
 .controller('GenderCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
-
+/*
+    // if use this, values need to be carefully reset
+    $scope.tempGender = {};
+    if(DataStore.gender === 'female' || $scope.formData.gender === 'female') {
+        $scope.tempGender = { value: 'female' };
+    } else {
+        $scope.tempGender = { value: 'male' };
+    }
+*/
     $scope.years = [];
     for (var i = 2015; i >= 1915; i--) {
         var year = i.toString();
@@ -113,20 +125,82 @@ angular.module('styledouble.controllers', [])
 
 .controller('BodyShapeFemaleCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
+/*
+    // if use this, values need to be carefully reset
+    $scope.tempGender = {};
+    if(DataStore.gender === 'female') {
+        $scope.tempGender = { value: 'female' };
+    } else {
+        $scope.tempGender = { value: 'male' };
+    }
+*/
     $scope.next = function() {
         //alert("Clicked: " );
         // Datastore set values here
-        $state.go('tab.my-sizes');
+        if(DataStore.gender === 'female') {
+          $state.go('tab.measurements');
+        } else {
+          $state.go('tab.gender');
+        }
     };
 })
 
 .controller('BodyShapeMaleCtrl', function($scope, $state, DataStore) {
     $scope.formData ={};
+/*
+    // if use this, values need to be carefully reset
+    $scope.tempGender = {};
+    if(DataStore.gender === 'male') {
+        $scope.tempGender = { value: 'male' };
+    } else {
+        $scope.tempGender = { value: 'female' };
+    }
+*/
     $scope.next = function() {
         //alert("Clicked: " );
         // Datastore set values here
-        $state.go('tab.my-sizes');
+        if(DataStore.gender === 'male') {
+          $state.go('tab.measurements');
+        } else {
+          $state.go('tab.gender');
+        }
     };
+
+// http://ionicframework.com/docs/api/service/$ionicPopover/
+/*
+  // .fromTemplate() method
+  var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
+
+  $scope.popover = $ionicPopover.fromTemplate(template, {
+    scope: $scope
+  });
+
+  // .fromTemplateUrl() method
+  $ionicPopover.fromTemplateUrl('my-popover.html', {
+    scope: $scope
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.closePopover = function() {
+    $scope.popover.hide();
+  };
+  //Cleanup the popover when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.popover.remove();
+  });
+  // Execute action on hide popover
+  $scope.$on('popover.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove popover
+  $scope.$on('popover.removed', function() {
+    // Execute action
+  });
+*/
 })
 
 .controller('MeasurementsCtrl', function($scope, $state, DataStore) {
@@ -142,7 +216,7 @@ angular.module('styledouble.controllers', [])
     $scope.formData ={};
     $scope.next = function() {
         this.setValues();
-        $state.go('tab.my-sizes');
+        $state.go('tab.brands-like');
     };
 
     $scope.details = function() {
@@ -156,6 +230,15 @@ angular.module('styledouble.controllers', [])
     $scope.next = function() {
         //alert("Clicked: " );
         // Datastore set values here???
+        $state.go('tab.brands-like');
+    };
+})
+
+.controller('BrandsLikeCtrl', function($scope, $state, DataStore) {
+    $scope.formData ={};
+    $scope.next = function() {
+        //alert("Clicked: " );
+        // Datastore set values here
         $state.go('tab.my-sizes');
     };
 })

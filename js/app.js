@@ -65,18 +65,29 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers'])
   .state('tab.body-shape-female', {
       url: "/body-shape-female",
       views: {
+<<<<<<< HEAD
           'body-shape': {
+=======
+          'body-shape-female': {
+>>>>>>> 22db6b78b84f1641a554e7fc1f532df3f4bebb2a
               templateUrl: 'templates/body-shape-female.html',
               controller: 'BodyShapeFemaleCtrl'
           }
       }
   })
 
+<<<<<<< HEAD
 
   .state('tab.body-shape-male', {
       url: "/body-shape-male",
       views: {
           'body-shape': {
+=======
+  .state('tab.body-shape-male', {
+      url: "/body-shape-male",
+      views: {
+          'body-shape-male': {
+>>>>>>> 22db6b78b84f1641a554e7fc1f532df3f4bebb2a
               templateUrl: 'templates/body-shape-male.html',
               controller: 'BodyShapeMaleCtrl'
           }
@@ -109,6 +120,16 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers'])
           'my-sizes': {
               templateUrl: 'templates/my-sizes.html',
               controller: 'MySizesCtrl'
+          }
+      }
+  })
+
+  .state('tab.brands-like', {
+      url: '/brands-like',
+      views: {
+          'brands-like': {
+              templateUrl: 'templates/brands-like.html',
+              controller: 'BrandsLikeCtrl'
           }
       }
   })

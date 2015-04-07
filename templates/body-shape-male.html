@@ -1,12 +1,107 @@
 <ion-view view-title="styleDouble">
     <ion-content class="padding">
+      <form novalidate class="css-form">
         <div class="list card">
             <div class="item item-divider calm-bg">My body shape is</div>
             <div class="item item-body">
-                Male
+                Male Body Shapes:
+            </div>
+            <div class="list">
+                <label class="item item-radio">
+                    <input type="radio" name="male_body_shape">
+                    <div class="item-content item-text-wrap">
+                        <!-- http://ionicframework.com/docs/api/service/$ionicPopover/ -->
+                        <!--
+                        <p>
+                            <button ng-click="openPopover($event)">1) Oval</button>
+                        </p>
+                        <script id="my-popover.html" type="text/ng-template">
+                            <ion-popover-view>
+                                <ion-header-bar>
+                                    <h2 class="title">1) Oval</h2>
+                                </ion-header-bar>
+                                <ion-content>
+                                    <span style="color:blue;" title="test test test">
+                                        (appearance is round particularly in midsection, may have narrower shoulders)
+                                    </span>
+                                </ion-content>
+                            </ion-popover-view>
+                        </script>
+                        -->
+                        <!-- --
+                        <b>1) Oval</b> <br/>
+                        <span class="hover-extra" style="color:blue;" title="test test test">
+                            (appearance is round particularly in midsection, may have narrower shoulders)
+                        </span>
+                        !-- -->
+                        <!-- -->
+                        <p style='font-size:10px; color:gray'>
+                            <b>1) Oval</b> 
+                            <span class="hover-extra" style="color:blue;" title="hidden">
+                                &nbsp;(appearance is round particularly in midsection, may have narrower shoulders)
+                            </span>
+                        </p>
+                        <!-- -->
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="male_body_shape">
+                    <div class="item-content item-text-wrap">
+                        <p style='font-size:10px; color:gray'>
+                            <b>2) Triangle</b> 
+                            <span class="hover-extra" style="color:blue;" title="hidden">
+                                &nbsp;(upper hips and lower midsection are larger than rest of body)
+                            </span>
+                        </p>
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="male_body_shape">
+                    <div class="item-content item-text-wrap">
+                        <p style='font-size:10px; color:gray'>
+                            <b>3) Inverted Triangle</b> 
+                            <span class="hover-extra" style="color:blue;" title="hidden">
+                                &nbsp;(broad shoulders and chest with much narrower hips and waist, common for body builders)
+                            </span>
+                        </p>
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="male_body_shape">
+                    <div class="item-content item-text-wrap">
+                        <p style='font-size:10px; color:gray'>
+                            <b>4) Trapezoid</b> 
+                            <span class="hover-extra" style="color:blue;" title="hidden">
+                                &nbsp;(similar to inverted triangle with broad shoulders and chest relative to narrower hips and waist but having more balance between upper and lower body. most proportional body type)
+                            </span>
+                        </p>
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="male_body_shape">
+                    <div class="item-content item-text-wrap">
+                        <p style='font-size:10px; color:gray'>
+                            <b>5) Rectangle</b> 
+                            <span class="hover-extra" style="color:blue;" title="hidden">
+                                &nbsp;(shoulders are same or similar width as waist and hips)
+                            </span>
+                        </p>
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
             </div>
         </div>
         <button ng-click="next(this)">Next</button><br />
+        <!-- <button ng-click="next(this)">{{tempGender.value == 'female' ? "(Disabled - 'Female' entered in Intro)" : 'Next'}}</button><br /> -->
         </div>
+      </form>
+      <!--
+      <br /><br />For debugging: {{tempGender}}
+      <br /><br />For debugging: {{formData}}
+      -->
     </ion-content>
 </ion-view>

@@ -1,12 +1,654 @@
+<!-- copied from my-sizes.html -->
 <ion-view view-title="styleDouble">
     <ion-content class="padding">
         <div class="list card">
-            <div class="item item-divider calm-bg">My Sizes</div>
-            <div class="item item-body">
-                My Sizes go here...
-            </div>
+			<div class="item item-divider item-header item-calm">
+				<h2 class="title">My Sizes</h2>
+			</div>
+			<div class="item item-body">
+				<div class="row">
+					<div class="col"></div>
+					<div class="col"><p style="font-size:8px; color:gray"><b>Tops</b></p></div>
+					<div class="col"><p style="font-size:8px; color:gray"><b>Pants</b></p></div>
+					<div class="col"><p style="font-size:8px; color:gray"><b>(TBD)</b></p></div>
+				</div>
+				<div class="row" style="font-size:12px; color:gray">
+					<div class="col">
+                        <b>Gap:</b>
+					</div>
+					<div class="col">
+                        <select id="gap_top_size" name="gap_top_size" ng-model="formData.gap_top_size" ng-init="formData.gap_top_size='0'">
+                            <optgroup label="Petite">
+                                <option value="XXS-P">XXS-P</option>
+                                <option value="XS-P">XS-P</option>
+                                <option value="S-P">S-P</option>
+                                <option value="M-P">M-P</option>
+                                <option value="L-P">L-P</option>
+                            </optgroup>
+                            <optgroup label="Petite Numerical Sizes">
+                                <option value="00P">00P</option>
+                                <option value="0P">0P</option>
+                                <option value="2P">2P</option>
+                                <option value="4P">4P</option>
+                                <option value="6P">6P</option>
+                                <option value="8P">8P</option>
+                                <option value="10P">10P</option>
+                                <option value="12P">12P</option>
+                                <option value="14P">14P</option>
+                                <option value="16P">16P</option>
+                            </optgroup>
+                            <optgroup label="Regular">
+                                <option value="XXS">XXS</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </optgroup>
+                            <optgroup label="Regular Numerical Sizes">
+                                <option value="00">00</option>
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                            </optgroup>
+                            <optgroup label="Tall">
+                                <option value="S-T">S-T</option>
+                                <option value="M-T">M-T</option>
+                                <option value="L-T">L-T</option>
+                                <option value="XL-T">XL-T</option>
+                                <option value="XXL-T">XXL-T</option>
+                            </optgroup>
+                            <optgroup label="Tall Numerical Sizes">
+                                <option value="4T">4T</option>
+                                <option value="6T">6T</option>
+                                <option value="8T">8T</option>
+                                <option value="10T">10T</option>
+                                <option value="12T">12T</option>
+                                <option value="14T">14T</option>
+                                <option value="16T">16T</option>
+                            </optgroup>
+                        </select>
+					</div>
+					<div class="col">
+                        <select id="gap_pants_size" name="gap_pants_size" ng-model="formData.gap_pants_size" ng-init="formData.gap_pants_size='0'"> 
+                            <optgroup label="Petite">
+                                <option value="XXS-P">XXS-P</option>
+                                <option value="XS-P">XS-P</option>
+                                <option value="S-P">S-P</option>
+                                <option value="M-P">M-P</option>
+                                <option value="L-P">L-P</option>
+                            </optgroup>
+                            <optgroup label="Petite Numerical Sizes">
+                                <option value="00P">00P</option>
+                                <option value="0P">0P</option>
+                                <option value="2P">2P</option>
+                                <option value="4P">4P</option>
+                                <option value="6P">6P</option>
+                                <option value="8P">8P</option>
+                                <option value="10P">10P</option>
+                                <option value="12P">12P</option>
+                                <option value="14P">14P</option>
+                                <option value="16P">16P</option>
+                            </optgroup>
+                            <optgroup label="Regular">
+                                <option value="XXS">XXS</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </optgroup>
+                            <optgroup label="Regular Numerical Sizes">
+                                <option value="00">00</option>
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                            </optgroup>
+                            <optgroup label="Tall">
+                                <option value="S-T">S-T</option>
+                                <option value="M-T">M-T</option>
+                                <option value="L-T">L-T</option>
+                                <option value="XL-T">XL-T</option>
+                                <option value="XXL-T">XXL-T</option>
+                            </optgroup>
+                            <optgroup label="Tall Numerical Sizes">
+                                <option value="4T">4T</option>
+                                <option value="6T">6T</option>
+                                <option value="8T">8T</option>
+                                <option value="10T">10T</option>
+                                <option value="12T">12T</option>
+                                <option value="14T">14T</option>
+                                <option value="16T">16T</option>
+                            </optgroup>
+                        </select>
+					</div>
+					<div class="col">
+					</div>
+				</div>
+				<div class="row" style="font-size:12px; color:gray">
+					<div class="col">
+                        <b>H&M:</b>
+					</div>
+					<div class="col">
+                            <select id="hnm_tops_size" name="hnm_tops_size" ng-model="formData.hnm_tops_size" ng-init="formData.hnm_tops_size='0'"> 
+                            <optgroup label="Petite">
+                                <option value="XXS-P">XXS-P</option>
+                                <option value="XS-P">XS-P</option>
+                                <option value="S-P">S-P</option>
+                                <option value="M-P">M-P</option>
+                                <option value="L-P">L-P</option>
+                            </optgroup>
+                            <optgroup label="Petite Numerical Sizes">
+                                <option value="00P">00P</option>
+                                <option value="0P">0P</option>
+                                <option value="2P">2P</option>
+                                <option value="4P">4P</option>
+                                <option value="6P">6P</option>
+                                <option value="8P">8P</option>
+                                <option value="10P">10P</option>
+                                <option value="12P">12P</option>
+                                <option value="14P">14P</option>
+                                <option value="16P">16P</option>
+                            </optgroup>
+                            <optgroup label="Regular">
+                                <option value="XXS">XXS</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </optgroup>
+                            <optgroup label="Regular Numerical Sizes">
+                                <option value="00">00</option>
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                            </optgroup>
+                            <optgroup label="Tall">
+                                <option value="S-T">S-T</option>
+                                <option value="M-T">M-T</option>
+                                <option value="L-T">L-T</option>
+                                <option value="XL-T">XL-T</option>
+                                <option value="XXL-T">XXL-T</option>
+                            </optgroup>
+                            <optgroup label="Tall Numerical Sizes">
+                                <option value="4T">4T</option>
+                                <option value="6T">6T</option>
+                                <option value="8T">8T</option>
+                                <option value="10T">10T</option>
+                                <option value="12T">12T</option>
+                                <option value="14T">14T</option>
+                                <option value="16T">16T</option>
+                            </optgroup>
+                        </select>
+					</div>
+					<div class="col">
+                        <select id="hnm_pants_size" name="hnm_pants_size" ng-model="formData.hnm_pants_size" ng-init="formData.hnm_pants_size='0'">
+                            <optgroup label="Petite">
+                                <option value="XXS-P">XXS-P</option>
+                                <option value="XS-P">XS-P</option>
+                                <option value="S-P">S-P</option>
+                                <option value="M-P">M-P</option>
+                                <option value="L-P">L-P</option>
+                            </optgroup>
+                            <optgroup label="Petite Numerical Sizes">
+                                <option value="00P">00P</option>
+                                <option value="0P">0P</option>
+                                <option value="2P">2P</option>
+                                <option value="4P">4P</option>
+                                <option value="6P">6P</option>
+                                <option value="8P">8P</option>
+                                <option value="10P">10P</option>
+                                <option value="12P">12P</option>
+                                <option value="14P">14P</option>
+                                <option value="16P">16P</option>
+                            </optgroup>
+                            <optgroup label="Regular">
+                                <option value="XXS">XXS</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </optgroup>
+                            <optgroup label="Regular Numerical Sizes">
+                                <option value="00">00</option>
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                            </optgroup>
+                            <optgroup label="Tall">
+                                <option value="S-T">S-T</option>
+                                <option value="M-T">M-T</option>
+                                <option value="L-T">L-T</option>
+                                <option value="XL-T">XL-T</option>
+                                <option value="XXL-T">XXL-T</option>
+                            </optgroup>
+                            <optgroup label="Tall Numerical Sizes">
+                                <option value="4T">4T</option>
+                                <option value="6T">6T</option>
+                                <option value="8T">8T</option>
+                                <option value="10T">10T</option>
+                                <option value="12T">12T</option>
+                                <option value="14T">14T</option>
+                                <option value="16T">16T</option>
+                            </optgroup>
+                        </select>
+					</div>
+					<div class="col">
+					</div>
+				</div>
+				<div class="row" style="font-size:12px; color:gray">
+					<div class="col">
+                        <b>Express:</b>
+					</div>
+					<div class="col">
+                        <select id="express_tops_size" name="express_tops_size" ng-model="formData.express_tops_size" ng-init="formData.express_tops_size='0'"> 
+                            <optgroup label="Petite">
+                                <option value="XXS-P">XXS-P</option>
+                                <option value="XS-P">XS-P</option>
+                                <option value="S-P">S-P</option>
+                                <option value="M-P">M-P</option>
+                                <option value="L-P">L-P</option>
+                            </optgroup>
+                            <optgroup label="Petite Numerical Sizes">
+                                <option value="00P">00P</option>
+                                <option value="0P">0P</option>
+                                <option value="2P">2P</option>
+                                <option value="4P">4P</option>
+                                <option value="6P">6P</option>
+                                <option value="8P">8P</option>
+                                <option value="10P">10P</option>
+                                <option value="12P">12P</option>
+                                <option value="14P">14P</option>
+                                <option value="16P">16P</option>
+                            </optgroup>
+                            <optgroup label="Regular">
+                                <option value="XXS">XXS</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </optgroup>
+                            <optgroup label="Regular Numerical Sizes">
+                                <option value="00">00</option>
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                            </optgroup>
+                            <optgroup label="Tall">
+                                <option value="S-T">S-T</option>
+                                <option value="M-T">M-T</option>
+                                <option value="L-T">L-T</option>
+                                <option value="XL-T">XL-T</option>
+                                <option value="XXL-T">XXL-T</option>
+                            </optgroup>
+                            <optgroup label="Tall Numerical Sizes">
+                                <option value="4T">4T</option>
+                                <option value="6T">6T</option>
+                                <option value="8T">8T</option>
+                                <option value="10T">10T</option>
+                                <option value="12T">12T</option>
+                                <option value="14T">14T</option>
+                                <option value="16T">16T</option>
+                            </optgroup>
+                        </select>
+					</div>
+					<div class="col">
+                        <select id="express_pants_size" name="express_pants_size" ng-model="formData.express_pants_size" ng-init="formData.express_pants_size='0'"> 
+                            <optgroup label="Petite">
+                                <option value="XXS-P">XXS-P</option>
+                                <option value="XS-P">XS-P</option>
+                                <option value="S-P">S-P</option>
+                                <option value="M-P">M-P</option>
+                                <option value="L-P">L-P</option>
+                            </optgroup>
+                            <optgroup label="Petite Numerical Sizes">
+                                <option value="00P">00P</option>
+                                <option value="0P">0P</option>
+                                <option value="2P">2P</option>
+                                <option value="4P">4P</option>
+                                <option value="6P">6P</option>
+                                <option value="8P">8P</option>
+                                <option value="10P">10P</option>
+                                <option value="12P">12P</option>
+                                <option value="14P">14P</option>
+                                <option value="16P">16P</option>
+                            </optgroup>
+                            <optgroup label="Regular">
+                                <option value="XXS">XXS</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </optgroup>
+                            <optgroup label="Regular Numerical Sizes">
+                                <option value="00">00</option>
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                            </optgroup>
+                            <optgroup label="Tall">
+                                <option value="S-T">S-T</option>
+                                <option value="M-T">M-T</option>
+                                <option value="L-T">L-T</option>
+                                <option value="XL-T">XL-T</option>
+                                <option value="XXL-T">XXL-T</option>
+                            </optgroup>
+                            <optgroup label="Tall Numerical Sizes">
+                                <option value="4T">4T</option>
+                                <option value="6T">6T</option>
+                                <option value="8T">8T</option>
+                                <option value="10T">10T</option>
+                                <option value="12T">12T</option>
+                                <option value="14T">14T</option>
+                                <option value="16T">16T</option>
+                            </optgroup>
+                        </select>
+					</div>
+					<div class="col">
+					</div>
+				</div>
+				<div class="row" style="font-size:12px; color:gray">
+					<div class="col">
+                        <b>Ann Taylor:</b>
+					</div>
+					<div class="col">
+                        <select id="ann_taylor_tops_size" name="ann_taylor_tops_size" ng-model="formData.ann_taylor_tops_size" ng-init="formData.ann_taylor_tops_size='0'"> 
+                            <optgroup label="Petite">
+                                <option value="XXS-P">XXS-P</option>
+                                <option value="XS-P">XS-P</option>
+                                <option value="S-P">S-P</option>
+                                <option value="M-P">M-P</option>
+                                <option value="L-P">L-P</option>
+                            </optgroup>
+                            <optgroup label="Petite Numerical Sizes">
+                                <option value="00P">00P</option>
+                                <option value="0P">0P</option>
+                                <option value="2P">2P</option>
+                                <option value="4P">4P</option>
+                                <option value="6P">6P</option>
+                                <option value="8P">8P</option>
+                                <option value="10P">10P</option>
+                                <option value="12P">12P</option>
+                                <option value="14P">14P</option>
+                                <option value="16P">16P</option>
+                            </optgroup>
+                            <optgroup label="Regular">
+                                <option value="XXS">XXS</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </optgroup>
+                            <optgroup label="Regular Numerical Sizes">
+                                <option value="00">00</option>
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                            </optgroup>
+                            <optgroup label="Tall">
+                                <option value="S-T">S-T</option>
+                                <option value="M-T">M-T</option>
+                                <option value="L-T">L-T</option>
+                                <option value="XL-T">XL-T</option>
+                                <option value="XXL-T">XXL-T</option>
+                            </optgroup>
+                            <optgroup label="Tall Numerical Sizes">
+                                <option value="4T">4T</option>
+                                <option value="6T">6T</option>
+                                <option value="8T">8T</option>
+                                <option value="10T">10T</option>
+                                <option value="12T">12T</option>
+                                <option value="14T">14T</option>
+                                <option value="16T">16T</option>
+                            </optgroup>
+                        </select>
+					</div>
+					<div class="col">
+                        <select id="ann_taylor_pants_size" name="ann_taylor_pants_size" ng-model="formData.ann_taylor_pants_size" ng-init="formData.ann_taylor_pants_size='0'"> 
+                            <optgroup label="Petite">
+                                <option value="XXS-P">XXS-P</option>
+                                <option value="XS-P">XS-P</option>
+                                <option value="S-P">S-P</option>
+                                <option value="M-P">M-P</option>
+                                <option value="L-P">L-P</option>
+                            </optgroup>
+                            <optgroup label="Petite Numerical Sizes">
+                                <option value="00P">00P</option>
+                                <option value="0P">0P</option>
+                                <option value="2P">2P</option>
+                                <option value="4P">4P</option>
+                                <option value="6P">6P</option>
+                                <option value="8P">8P</option>
+                                <option value="10P">10P</option>
+                                <option value="12P">12P</option>
+                                <option value="14P">14P</option>
+                                <option value="16P">16P</option>
+                            </optgroup>
+                            <optgroup label="Regular">
+                                <option value="XXS">XXS</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </optgroup>
+                            <optgroup label="Regular Numerical Sizes">
+                                <option value="00">00</option>
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                            </optgroup>
+                            <optgroup label="Tall">
+                                <option value="S-T">S-T</option>
+                                <option value="M-T">M-T</option>
+                                <option value="L-T">L-T</option>
+                                <option value="XL-T">XL-T</option>
+                                <option value="XXL-T">XXL-T</option>
+                            </optgroup>
+                            <optgroup label="Tall Numerical Sizes">
+                                <option value="4T">4T</option>
+                                <option value="6T">6T</option>
+                                <option value="8T">8T</option>
+                                <option value="10T">10T</option>
+                                <option value="12T">12T</option>
+                                <option value="14T">14T</option>
+                                <option value="16T">16T</option>
+                            </optgroup>
+                        </select>
+					</div>
+					<div class="col">
+					</div>
+				</div>
+				<div class="row" style="font-size:12px; color:gray">
+					<div class="col">
+                        <b>A|X:</b>
+					</div>
+					<div class="col">
+                        <select id="ax_tops_size" name="ax_tops_size" ng-model="formData.ax_tops_size" ng-init="formData.ax_tops_size='0'"> 
+                            <optgroup label="Petite">
+                                <option value="XXS-P">XXS-P</option>
+                                <option value="XS-P">XS-P</option>
+                                <option value="S-P">S-P</option>
+                                <option value="M-P">M-P</option>
+                                <option value="L-P">L-P</option>
+                            </optgroup>
+                            <optgroup label="Petite Numerical Sizes">
+                                <option value="00P">00P</option>
+                                <option value="0P">0P</option>
+                                <option value="2P">2P</option>
+                                <option value="4P">4P</option>
+                                <option value="6P">6P</option>
+                                <option value="8P">8P</option>
+                                <option value="10P">10P</option>
+                                <option value="12P">12P</option>
+                                <option value="14P">14P</option>
+                                <option value="16P">16P</option>
+                            </optgroup>
+                            <optgroup label="Regular">
+                                <option value="XXS">XXS</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </optgroup>
+                            <optgroup label="Regular Numerical Sizes">
+                                <option value="00">00</option>
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                            </optgroup>
+                            <optgroup label="Tall">
+                                <option value="S-T">S-T</option>
+                                <option value="M-T">M-T</option>
+                                <option value="L-T">L-T</option>
+                                <option value="XL-T">XL-T</option>
+                                <option value="XXL-T">XXL-T</option>
+                            </optgroup>
+                            <optgroup label="Tall Numerical Sizes">
+                                <option value="4T">4T</option>
+                                <option value="6T">6T</option>
+                                <option value="8T">8T</option>
+                                <option value="10T">10T</option>
+                                <option value="12T">12T</option>
+                                <option value="14T">14T</option>
+                                <option value="16T">16T</option>
+                            </optgroup>
+                        </select>
+					</div>
+					<div class="col">
+                        <select id="ax_pants_size" name="ax_pants_size" ng-model="formData.ax_pants_size" ng-init="formData.ax_pants_size='0'"> 
+                            <optgroup label="Petite">
+                                <option value="XXS-P">XXS-P</option>
+                                <option value="XS-P">XS-P</option>
+                                <option value="S-P">S-P</option>
+                                <option value="M-P">M-P</option>
+                                <option value="L-P">L-P</option>
+                            </optgroup>
+                            <optgroup label="Petite Numerical Sizes">
+                                <option value="00P">00P</option>
+                                <option value="0P">0P</option>
+                                <option value="2P">2P</option>
+                                <option value="4P">4P</option>
+                                <option value="6P">6P</option>
+                                <option value="8P">8P</option>
+                                <option value="10P">10P</option>
+                                <option value="12P">12P</option>
+                                <option value="14P">14P</option>
+                                <option value="16P">16P</option>
+                            </optgroup>
+                            <optgroup label="Regular">
+                                <option value="XXS">XXS</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </optgroup>
+                            <optgroup label="Regular Numerical Sizes">
+                                <option value="00">00</option>
+                                <option value="0">0</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                            </optgroup>
+                            <optgroup label="Tall">
+                                <option value="S-T">S-T</option>
+                                <option value="M-T">M-T</option>
+                                <option value="L-T">L-T</option>
+                                <option value="XL-T">XL-T</option>
+                                <option value="XXL-T">XXL-T</option>
+                            </optgroup>
+                            <optgroup label="Tall Numerical Sizes">
+                                <option value="4T">4T</option>
+                                <option value="6T">6T</option>
+                                <option value="8T">8T</option>
+                                <option value="10T">10T</option>
+                                <option value="12T">12T</option>
+                                <option value="14T">14T</option>
+                                <option value="16T">16T</option>
+                            </optgroup>
+                        </select>
+					</div>
+					<div class="col">
+					</div>
+				</div>
+			</div>
         </div>
         <button ng-click="next(this)">Next</button><br />
-        </div>
     </ion-content>
 </ion-view>
