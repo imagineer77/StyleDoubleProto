@@ -1,0 +1,10 @@
+<ion-view view-title="Doubles">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-avatar" ng-repeat="double in doubles" type="item-text-wrap" href="#/tab/doubles/{{double.id}}">
+                <img ng-src="{{double.face}}">
+                <h2>{{double.name}}</h2>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
