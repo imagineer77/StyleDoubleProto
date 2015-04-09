@@ -1,8 +1,40 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<html ng-app="styleDouble">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>style double</title>
+    <!-- the following 2 lines might or might not override some of the default css ; comment them out for now -->
+    <!-- <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet"> -->
+    <!-- <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script> -->
+  </head>
+  <body>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button class="button-icon ion-arrow-left-c"></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+
 <ion-tabs class="tabs-icon-top tabs-positive">
 
-    <ion-tab title="Profile" icon-off="ion-ios-body-outline" icon-on="ion-ios-body" href="#/tab/dash">
-        <ion-nav-view name="tab-dash"></ion-nav-view>
+    <!--ion-tab title="Home" icon="ion-home" href="#/tab/home"-->
+    <ion-tab title="Home" icon-off="ion-home" icon-on="ion-ios-home" href="#/tab/home">
+        <ion-nav-view name="home"></ion-nav-view>
     </ion-tab>
+
+    <ion-tab title="Profile" icon-off="ion-ios-body-outline" icon-on="ion-ios-body" href="#/tab/profile">
+        <ion-nav-view name="profile"></ion-nav-view>
+    </ion-tab>
+
+    <!--
+    <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+        <ion-nav-view name="account"></ion-nav-view>
+    </ion-tab>
+    -->
+
     <ion-tab title="Doubles" icon-off="ion-ios-people-outline" icon-on="ion-ios-people" href="#/tab/doubles">
         <ion-nav-view name="doubles"></ion-nav-view>
     </ion-tab>
@@ -13,4 +45,76 @@
         <ion-nav-view name="upload"></ion-nav-view>
     </ion-tab>
 
+    <ion-tab title="Sign-Out" icon="ion-log-out" href="#/tab/sign-in">
+        <ion-nav-view name="sign-in"></ion-nav-view>
+    </ion-tab>
+        
+    <ion-tab title="About" icon="ion-ios-information" href="#/tab/about">
+        <ion-nav-view name="about"></ion-nav-view>
+        <!--ion-nav-view name="about-tab"></ion-nav-view-->
+    </ion-tab>
+
+<!--
+    <ion-tab title="StyleDouble" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+        <ion-nav-view name="tab-dash"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Intro" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/gender">
+        <ion-nav-view name="gender"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Height Weight" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/height-weight">
+        <ion-nav-view name="height-weight"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Body Shape Female" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/body-shape-female">
+        <ion-nav-view name="body-shape-female"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Body Shape Male" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/body-shape-male">
+        <ion-nav-view name="body-shape-male"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Measurements" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/measurements">
+        <ion-nav-view name="measurements"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Measurement Details" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/measurement-details">
+        <ion-nav-view name="measurement-details"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Brands I Like" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/brands-like">
+        <ion-nav-view name="brands-like"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="My Sizes" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/my-sizes">
+        <ion-nav-view name="my-sizes"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Cloth Returns" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/cloth-returns">
+        <ion-nav-view name="cloth-returns"></ion-nav-view>
+    </ion-tab>
+-->
 </ion-tabs>
+<!--
+    <script id="templates/tabs.html" type="text/ng-template">
+      <ion-view>
+        <ion-tabs class="tabs-icon-top tabs-positive">
+
+          <ion-tab title="Home" icon="ion-home" href="#/tab/home">
+            <ion-nav-view name="home-tab"></ion-nav-view>
+          </ion-tab>
+
+          <ion-tab title="About" icon="ion-ios-information" href="#/tab/about">
+            <ion-nav-view name="about-tab"></ion-nav-view>
+          </ion-tab>
+
+          <ion-tab title="Sign-Out" icon="ion-log-out" href="#/tab/sign-in">
+          </ion-tab>
+
+        </ion-tabs>
+      </ion-view>
+    </script>
+-->
+  </body>
+</html>

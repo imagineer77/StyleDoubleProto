@@ -41,6 +41,98 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                 }
             })
 
+  // ********************************** //
+  // *** from example *** //
+    .state('signin', {
+      url: '/sign-in',
+      //views: {
+        //'sign-in': {
+          templateUrl: 'templates/sign-in.html',
+          controller: 'SignInCtrl'
+        //}
+      //}
+    })
+    .state('forgotpassword', {
+      url: '/forgot-password',
+      views: {
+        'sign-in': {
+          templateUrl: 'templates/forgot-password.html'
+        }
+      }
+    })
+            .state('tab.account', {
+                url: '/account',
+                views: {
+                    'sign-in': {
+                        templateUrl: 'templates/account.html',
+                        controller: 'AccountCtrl'
+                    }
+                }
+            })
+    /*
+    .state('tab.welcome-home', {
+      url: '/welcome-home',
+      views: {
+        'welcome-home': {
+          templateUrl: 'templates/welcome-home.html',
+          controller: 'WelcomeHomeCtrl'
+        }
+      }
+    })
+    */
+    .state('tab.home', {
+      url: '/home',
+      views: {
+        'home': {
+          templateUrl: 'templates/home.html',
+          controller: 'HomeCtrl'
+        }
+      }
+    })
+    .state('tab.facts', {
+      url: '/facts',
+      views: {
+        'home': {
+          templateUrl: 'templates/facts.html'
+        }
+      }
+    })
+    .state('tab.facts2', {
+      url: '/facts2',
+      views: {
+        'home': {
+          templateUrl: 'templates/facts2.html'
+        }
+      }
+    })
+    .state('tab.about', {
+      url: '/about',
+      views: {
+        'about': {
+          templateUrl: 'templates/about.html'
+        }
+      }
+    })
+    .state('tab.navstack', {
+      url: '/navstack',
+      views: {
+        'about': {
+          templateUrl: 'templates/nav-stack.html'
+        }
+      }
+    })
+    /*
+    .state('tab.contact', {
+      url: '/contact',
+      views: {
+        'contact-tab': {
+          templateUrl: 'templates/contact.html'
+        }
+      }
+    });
+    */
+  // ********************************** //
+
             .state('tab.doubles', {
                 url: '/doubles',
                 views: {
@@ -89,23 +181,22 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                         controller: 'UploadCtrl'
                     }
                 }
-            });
+            })
 
-/*
-        .state('tab.profile', {
-            url: '/profile',
-            views: {
-                'doubles': {
-                    templateUrl: 'templates/profile.html',
-                    controller: 'ProfileCtrl'
+            .state('tab.profile', {
+                url: '/profile',
+                views: {
+                    'profile': {
+                        templateUrl: 'templates/profile.html',
+                        controller: 'ProfileCtrl'
+                    }
                 }
-            }
-        })
+            })
 
             .state('tab.gender', {
                 url: "/gender",
                 views: {
-                    'gender': {
+                    'profile': {
                         templateUrl: 'templates/gender.html',
                         controller: 'GenderCtrl'
                     }
@@ -131,7 +222,6 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                     }
                 }
             })
-
 
             .state('tab.body-shape-male', {
                 url: "/body-shape-male",
@@ -173,6 +263,16 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                 }
             })
 
+            .state('tab.brands-like', {
+                url: '/brands-like',
+                views: {
+                    'brands-like': {
+                        templateUrl: 'templates/brands-like.html',
+                        controller: 'BrandsLikeCtrl'
+                    }
+                }
+            })
+
             .state('tab.cloth-returns', {
                 url: '/cloth-returns',
                 views: {
@@ -181,20 +281,11 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                         controller: 'ClothReturnsCtrl'
                     }
                 }
-            })
-
-            .state('tab.account', {
-                url: '/account',
-                views: {
-                    'account': {
-                        templateUrl: 'templates/account.html',
-                        controller: 'AccountCtrl'
-                    }
-                }
             });
-*/
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/tab/dash');
+        //$urlRouterProvider.otherwise('/tab/dash');
+        //$urlRouterProvider.otherwise('/tab/home');
+        $urlRouterProvider.otherwise('/sign-in');
 
     });

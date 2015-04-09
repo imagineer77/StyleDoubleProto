@@ -60,6 +60,25 @@ angular.module('styledouble.controllers', [])
         return DataStore;
     })
 
+    .controller('SignInCtrl', function($scope, $state) {
+        $scope.signIn = function(user) {
+            console.log('Sign-In', user);
+            //$state.go('tab.home');
+            //$state.go('tab.recommendations');
+            $state.go('tab.doubles');
+        };
+    })
+
+    .controller('HomeCtrl', function($scope) {
+        console.log('HomeCtrl');
+    })
+
+    /*
+    .controller('WelcomeHomeCtrl', function($scope) {
+        console.log('WelcomeHomeCtrl');
+    })
+    */
+
     .controller('DashCtrl', function($scope, $state) {
         $scope.text = "Welcome";
     })
@@ -94,8 +113,6 @@ angular.module('styledouble.controllers', [])
         $scope.text = "Profile";
     })
 
-/*
-
     .controller('DashCtrl', function($scope, $state) {
         $scope.next = function() {
             $state.go('tab.gender');
@@ -104,15 +121,15 @@ angular.module('styledouble.controllers', [])
 
     .controller('GenderCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
-        /!*
-         // if use this, values need to be carefully reset
-         $scope.tempGender = {};
-         if(DataStore.gender === 'female' || $scope.formData.gender === 'female') {
-         $scope.tempGender = { value: 'female' };
-         } else {
-         $scope.tempGender = { value: 'male' };
-         }
-         *!/
+        /*
+        // if use this, values need to be carefully reset
+        $scope.tempGender = {};
+        if(DataStore.gender === 'female' || $scope.formData.gender === 'female') {
+            $scope.tempGender = { value: 'female' };
+        } else {
+            $scope.tempGender = { value: 'male' };
+        }
+        */
         $scope.years = [];
         for (var i = 2015; i >= 1915; i--) {
             var year = i.toString();
@@ -162,15 +179,15 @@ angular.module('styledouble.controllers', [])
 
     .controller('BodyShapeFemaleCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
-        /!*
-         // if use this, values need to be carefully reset
-         $scope.tempGender = {};
-         if(DataStore.gender === 'female') {
-         $scope.tempGender = { value: 'female' };
-         } else {
-         $scope.tempGender = { value: 'male' };
-         }
-         *!/
+        /*
+        // if use this, values need to be carefully reset
+        $scope.tempGender = {};
+        if(DataStore.gender === 'female') {
+            $scope.tempGender = { value: 'female' };
+        } else {
+            $scope.tempGender = { value: 'male' };
+        }
+        */
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
@@ -184,15 +201,15 @@ angular.module('styledouble.controllers', [])
 
     .controller('BodyShapeMaleCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
-        /!*
-         // if use this, values need to be carefully reset
-         $scope.tempGender = {};
-         if(DataStore.gender === 'male') {
-         $scope.tempGender = { value: 'male' };
-         } else {
-         $scope.tempGender = { value: 'female' };
-         }
-         *!/
+        /*
+        // if use this, values need to be carefully reset
+        $scope.tempGender = {};
+        if(DataStore.gender === 'male') {
+            $scope.tempGender = { value: 'male' };
+        } else {
+            $scope.tempGender = { value: 'female' };
+        }
+        */
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
@@ -203,47 +220,51 @@ angular.module('styledouble.controllers', [])
             }
         };
 
-// http://ionicframework.com/docs/api/service/$ionicPopover/
-        /!*
-         // .fromTemplate() method
-         var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
+        // http://ionicframework.com/docs/api/service/$ionicPopover/
+        /*
+        // .fromTemplate() method
+        var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
 
-         $scope.popover = $ionicPopover.fromTemplate(template, {
-         scope: $scope
-         });
+        $scope.popover = $ionicPopover.fromTemplate(template, {
+            scope: $scope
+        });
 
-         // .fromTemplateUrl() method
-         $ionicPopover.fromTemplateUrl('my-popover.html', {
-         scope: $scope
-         }).then(function(popover) {
-         $scope.popover = popover;
-         });
+        // .fromTemplateUrl() method
+        $ionicPopover.fromTemplateUrl('my-popover.html', {
+            scope: $scope
+        }).then(function(popover) {
+            $scope.popover = popover;
+        });
 
-         $scope.openPopover = function($event) {
-         $scope.popover.show($event);
-         };
-         $scope.closePopover = function() {
-         $scope.popover.hide();
-         };
-         //Cleanup the popover when we're done with it!
-         $scope.$on('$destroy', function() {
-         $scope.popover.remove();
-         });
-         // Execute action on hide popover
-         $scope.$on('popover.hidden', function() {
-         // Execute action
-         });
-         // Execute action on remove popover
-         $scope.$on('popover.removed', function() {
-         // Execute action
-         });
-         *!/
+        $scope.openPopover = function($event) {
+            $scope.popover.show($event);
+        };
+
+        $scope.closePopover = function() {
+            $scope.popover.hide();
+        };
+
+        //Cleanup the popover when we're done with it!
+        $scope.$on('$destroy', function() {
+            $scope.popover.remove();
+        });
+
+        // Execute action on hide popover
+        $scope.$on('popover.hidden', function() {
+            // Execute action
+        });
+
+        // Execute action on remove popover
+        $scope.$on('popover.removed', function() {
+            // Execute action
+        });
+        */
     })
 
     .controller('MeasurementsCtrl', function($scope, $state, DataStore) {
         $scope.setValues = function() {
-            /!*alert("Clicked: " + $scope.formData.neck + ":" + $scope.formData.chest
-             + ":" + $scope.formData.waist + ":" + $scope.formData.hips);*!/
+            /*alert("Clicked: " + $scope.formData.neck + ":" + $scope.formData.chest
+            + ":" + $scope.formData.waist + ":" + $scope.formData.hips);*/
             DataStore.setNeck($scope.formData.neck);
             DataStore.setChest($scope.formData.chest);
             DataStore.setWaist($scope.formData.waist);
@@ -303,8 +324,8 @@ angular.module('styledouble.controllers', [])
 
         $scope.isValid = function() {
             return  $scope.formData.email.length > 0 &&
-                $scope.formData.password.length > 0 &&
-                $scope.formData.passwordx.length > 0;
+                    $scope.formData.password.length > 0 &&
+                    $scope.formData.passwordx.length > 0;
         };
 
         $scope.finish = function() {
@@ -321,10 +342,8 @@ angular.module('styledouble.controllers', [])
                 + "Chest: " + +DataStore.chest + " in" + "\n"
                 + "Waist: " + +DataStore.waist + " in" + "\n"
                 + "Hips: " + +DataStore.hips + " in");
-            }
-            else {
+            } else {
                 alert("Passwords must match!");
             }
         };
     });
-*/

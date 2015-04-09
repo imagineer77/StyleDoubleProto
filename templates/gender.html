@@ -3,32 +3,39 @@
         <form novalidate class="css-form" ng-init="formData.gender='female'">
             <div class="list card">
                 <div class="item item-divider calm-bg">I am a  (required)</div>
-                    <div class="list">
-                        <label class="item item-radio">
-                            <input type="radio" ng-model="formData.gender" value="female">
-                            <div class="item-content">
-                                Female
-                            </div>
-                            <i class="radio-icon ion-checkmark"></i>
-                        </label>
-                        <label class="item item-radio">
-                            <input type="radio" ng-model="formData.gender" value="male">
-                            <div class="item-content">
-                                Male
-                            </div>
-                            <i class="radio-icon ion-checkmark"></i>
-                        </label>
-                    </div>
-            </div>
-                <div class="item item-divider calm-bg">Born in (Optional, but will help us match you)</div>
-                    <div class="item item-body">
-                        <select ng-model="formData.birthyear">
-                            <option ng-repeat="year in years" title="{{year.title}}" value="{{year.value}}">
-                                {{year.displayName}}
-                            </option>
-                        </select>
-                    </div>
+                <div class="list">
+                    <label class="item item-radio">
+                        <input type="radio" ng-model="formData.gender" value="female">
+                        <div class="item-content">
+                            Female
+                        </div>
+                        <i class="radio-icon ion-checkmark"></i>
+                    </label>
+                    <label class="item item-radio">
+                        <input type="radio" ng-model="formData.gender" value="male">
+                        <div class="item-content">
+                            Male
+                        </div>
+                        <i class="radio-icon ion-checkmark"></i>
+                    </label>
                 </div>
+            <!--
+                <p>Example of Ionic tabs. Navigate to each tab, and
+                navigate to child views of each tab and notice how
+                each tab has its own navigation history.</p>
+                <p>
+                  <a class="button icon icon-right ion-chevron-right" href="#/tab/facts">Scientific Facts</a>
+                </p>
+            -->
+            </div>
+            <div class="item item-divider calm-bg">Born in (Optional, but will help us match you)</div>
+            <div class="item item-body">
+                <select ng-model="formData.birthyear">
+                    <option ng-repeat="year in years" title="{{year.title}}" value="{{year.value}}">
+                        {{year.displayName}}
+                    </option>
+                </select>
+            </div>
             <br /><button ng-click="next(this)">Next</button><br />
         </form>
         <br /><br />For debugging: {{formData}}

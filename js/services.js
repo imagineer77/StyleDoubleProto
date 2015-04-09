@@ -99,7 +99,8 @@ angular.module('styledouble.services', [])
 })
 
 .factory('DataStore', function() {
-   //create datastore with default values
+    /*
+    //create datastore with default values
     var DataStore = {
         gender:       'male',
         birthyear:   '1950'
@@ -114,4 +115,5 @@ angular.module('styledouble.services', [])
     };
 
     return DataStore;
+    */
 });
