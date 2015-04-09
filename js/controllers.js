@@ -60,6 +60,29 @@ angular.module('styledouble.controllers', [])
         return DataStore;
     })
 
+    .directive('starRating', function () {
+        return {
+            restrict: 'A',
+            template: '<ul class="rating">' +
+            '<li ng-repeat="star in stars" ng-class="star">' +
+            '\u2605' +
+            '</li>' +
+            '</ul>',
+            scope: {
+                ratingValue: '=',
+                max: '='
+            },
+            link: function (scope, elem, attrs) {
+                scope.stars = [];
+                for (var i = 0; i < scope.max; i++) {
+                    scope.stars.push({
+                        filled: i < scope.ratingValue
+                    });
+                }
+            }
+        }
+    })
+
     .controller('DashCtrl', function($scope, $state) {
         $scope.text = "Welcome";
     })
@@ -93,6 +116,30 @@ angular.module('styledouble.controllers', [])
     .controller('ProfileCtrl', function($scope, $state) {
         $scope.text = "Profile";
     })
+
+    .controller("UploadCtrl", function($scope, Doubles) {
+
+        $scope.ratings = [{
+            current: 5,
+            max: 10
+        }, {
+            current: 3,
+            max: 5
+        }];
+
+        this.review = {};
+
+        $scope.reviews = Dobules.all();
+        $scope.remove = function(review) {
+            Reviews.remove(review);
+        }
+
+        this.addReview = function(product){
+            this.review.createdOn = Date.now();
+            product.reviews.push(this.review);
+            this.review = {};
+        };
+    });
 
 /*
 
