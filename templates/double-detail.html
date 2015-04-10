@@ -1,8 +1,12 @@
 <ion-view view-title="{{double.name}}">
     <ion-content class="padding">
-        <img ng-src="{{double.face}}" style="width: 64px; height: 64px">
-        <p>
-            {{double.lastText}}
-        </p>
+        <ion-list>
+            <ion-item class="item-avatar" ng-repeat="review in double.reviews" type="item-text-wrap" href="#/tab/doubles/{{double.id}}">
+                <img ng-src="{{review.image}}" style="width: 100px; height: 100px">
+                <div star-rating rating-value="review.rating.current" max="review.rating.max" ></div>
+                {{review.body}}
+                <cite class="clearfix">{{review.createdOn | date}}</cite>
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>
