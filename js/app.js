@@ -60,26 +60,6 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
         }
       }
     })
-            .state('tab.account', {
-                url: '/account',
-                views: {
-                    'sign-in': {
-                        templateUrl: 'templates/account.html',
-                        controller: 'AccountCtrl'
-                    }
-                }
-            })
-    /*
-    .state('tab.welcome-home', {
-      url: '/welcome-home',
-      views: {
-        'welcome-home': {
-          templateUrl: 'templates/welcome-home.html',
-          controller: 'WelcomeHomeCtrl'
-        }
-      }
-    })
-    */
     .state('tab.home', {
       url: '/home',
       views: {
@@ -183,15 +163,15 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                 }
             })
 
-            .state('tab.profile', {
-                url: '/profile',
-                views: {
-                    'profile': {
-                        templateUrl: 'templates/profile.html',
-                        controller: 'ProfileCtrl'
-                    }
+        .state('tab.profile', {
+            url: '/profile',
+            views: {
+                'doubles': {
+                    templateUrl: 'templates/profile.html',
+                    controller: 'ProfileCtrl'
                 }
-            })
+            }
+        })
 
             .state('tab.gender', {
                 url: "/gender",
@@ -279,6 +259,16 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                     'cloth-returns': {
                         templateUrl: 'templates/cloth-returns.html',
                         controller: 'ClothReturnsCtrl'
+                    }
+                }
+            })
+
+            .state('tab.account', {
+                url: '/account',
+                views: {
+                    'account': {
+                        templateUrl: 'templates/account.html',
+                        controller: 'AccountCtrl'
                     }
                 }
             });
