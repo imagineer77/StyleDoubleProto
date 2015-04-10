@@ -1,8 +1,8 @@
 <ion-view view-title="{{recommendation.name}}">
     <ion-content class="padding">
-        <img ng-src="{{recommendation.face}}" style="width: 64px; height: 64px">
-        <p>
-            {{recommendation.lastText}}
-        </p>
+        <img ng-src="{{recommendation.image}}" style="width: 60px; height: 60px">
+        <div star-rating rating-value="recommendation.rating.current" max="recommendation.rating.max" ></div></span>
+        {{recommendation.detail}}
+        <cite class="clearfix">{{recommendation.createdOn | date}}</cite>
     </ion-content>
 </ion-view>
