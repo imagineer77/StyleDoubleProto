@@ -1,5 +1,4 @@
-angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.services', 'ngCordova',
-                'ngAnimate', 'ngTouch', 'ngSanitize'])
+angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.services', 'ngCordova'])
 
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
