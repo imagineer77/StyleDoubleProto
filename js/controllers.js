@@ -96,6 +96,10 @@ angular.module('styledouble.controllers', [])
         }
     })
 
+    .controller('ProfileCtrl', function($scope, $state) {
+        $scope.text = "Profile";
+    })
+
     .controller('DashCtrl', function($scope, $state) {
         $scope.text = "Welcome";
     })
@@ -104,7 +108,7 @@ angular.module('styledouble.controllers', [])
         $scope.doubles = Doubles.all();
         $scope.remove = function(double) {
             Doubles.remove(double);
-        }
+        };
     })
 
     .controller('DoubleDetailCtrl', function($scope, $stateParams, Doubles) {
@@ -115,44 +119,79 @@ angular.module('styledouble.controllers', [])
         $scope.recommendations = Recommendations.all();
         $scope.remove = function(recommendation) {
             Recommendations.remove(recommendation);
-        }
+        };
     })
 
     .controller('RecommendationDetailCtrl', function($scope, $stateParams, Recommendations) {
         $scope.recommendation = Recommendations.get($stateParams.recommendationId);
     })
 
-    .controller('UploadCtrl', function($scope, $state) {
-        $scope.text = "Upload";
-    })
+.controller('UploadCtrl', function($scope, $cordovaCamera, $cordovaImagePicker) {
+    var options1 = {
+        maximumImagesCount: 100,
+        width: 100,
+        height: 100,
+        quality: 80
+    };
 
-    .controller('ProfileCtrl', function($scope, $state) {
-        $scope.text = "Profile";
-    })
+    $scope.selectPicture = function() {
+        $cordovaImagePicker.getPictures(options1)
+            .then(function (results) {
+                for (var i = 0; i < results.length; i++) {
+                    $scope.imgURI = results[i];
+                }
+            }, function (error) {
+                alert(error);
+            });
+    };
 
-    .controller("UploadCtrl", function($scope, Doubles) {
-
-        $scope.ratings = [{
-            current: 5,
-            max: 10
-        }, {
-            current: 3,
-            max: 5
-        }];
-
-        this.review = {};
-
-        $scope.reviews = Dobules.all();
-        $scope.remove = function(review) {
-            Reviews.remove(review);
-        }
-
-        this.addReview = function(product){
-            this.review.createdOn = Date.now();
-            product.reviews.push(this.review);
-            this.review = {};
+    $scope.takePicture = function() {
+        var options2 = {
+            quality : 75,
+            destinationType : Camera.DestinationType.DATA_URL,
+            sourceType :Camera.PictureSourceType.CAMERA,
+            allowEdit : true,
+            encodingType: Camera.EncodingType.JPEG,
+            targetWidth: 100,
+            targetHeight: 100,
+            popoverOptions: CameraPopoverOptions,
+            saveToPhotoAlbum: false
         };
-    })
+
+        $cordovaCamera.getPicture(options2).then(function(imageData) {
+            $scope.imgURI = "data:image/jpeg;base64," + imageData;
+        }, function(err) {
+            alert("No camera availabel on iPhone Sim!");
+        });
+    };
+
+    $scope.upload = function($scope) {
+        alert("Uploaded!");
+        $scope.imgURI = undefined;
+        //$scope.comments = "";
+        $scope.formData = {};
+    };
+})
+
+
+/*
+.controller('UploadCtrl', function($scope,  $timeout, $cordovaFileTransfer) {
+
+    $scope.fileName = '';
+
+    $scope.openFileDialog = function () {
+        ionic.trigger('click', {target: document.getElementById('file')});
+    };
+
+
+    angular.element('#file').on('change', function (event) {
+        var file = event.target.files[0];
+        $scope.fileName = file.name;
+        $scope.$apply();
+    });
+});
+*/
+
 
 /*
 
@@ -171,7 +210,7 @@ angular.module('styledouble.controllers', [])
             $scope.tempGender = { value: 'female' };
         } else {
             $scope.tempGender = { value: 'male' };
-        }
+        };
         */
         $scope.years = [];
         for (var i = 2015; i >= 1915; i--) {
@@ -238,7 +277,7 @@ angular.module('styledouble.controllers', [])
                 $state.go('tab.measurements');
             } else {
                 $state.go('tab.gender');
-            }
+            };
         };
     })
 
@@ -260,7 +299,7 @@ angular.module('styledouble.controllers', [])
                 $state.go('tab.measurements');
             } else {
                 $state.go('tab.gender');
-            }
+            };
         };
 
         // http://ionicframework.com/docs/api/service/$ionicPopover/
@@ -383,6 +422,6 @@ angular.module('styledouble.controllers', [])
                 + "Hips: " + +DataStore.hips + " in");
             } else {
                 alert("Passwords must match!");
-            }
+            };
         };
     });

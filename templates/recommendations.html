@@ -1,13 +1,32 @@
+
 <ion-view view-title="Recommendations">
 <ion-content>
     <ion-list>
-        <ion-item class="item-avatar item-text-wrap" ng-repeat="recommendation in recommendations" href="#/tab/recommendations/{{recommendation.id}}">
-            <img src="{{recommendation.image}}" style="width: 60px; height: 60px">
+        <ion-item class="item item-thumbnail-left item-text-wrap" ng-repeat="recommendation in recommendations" href="#/tab/recommendations/{{recommendation.id}}">
+            <img src="{{recommendation.image}}">
+            <h3>{{recommendation.title}}</h3>
+            <h4 ng-bind-html="recommendation.summary"></h4>
             <div star-rating rating-value="recommendation.rating.current" max="recommendation.rating.max" ></div>
-            {{recommendation.summary}}
+            <h4 ng-bind-html="recommendation.stats"></h4>
         </ion-item>
     </ion-list>
 </ion-content>
 </ion-view>
 
+<!--
+
+<ion-view view-title="Recommendations">
+    <ion-content>
+        <div class="list card" ng-repeat="recommendation in recommendations">
+            <div class="item item-thumbnail-left item-text-wrap" href="#/tab/recommendations/{{recommendation.id}}">
+                <img src="{{recommendation.image}}">
+                <h3>{{recommendation.title}}</h3>
+                <h4 ng-bind-html="recommendation.stats"></h4>
+                <h4 ng-bind-html="recommendation.summary"></h4>
+                <div star-rating rating-value="recommendation.rating.current" max="recommendation.rating.max" ></div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+-->
 

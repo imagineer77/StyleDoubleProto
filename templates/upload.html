@@ -1,28 +1,53 @@
-<ion-view view-title="styleDouble">
+
+<ion-view view-title="Add Review" class="title">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon ion-image" ng-click="selectPicture()"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-camera" ng-click="takePicture()"></button>
+    </ion-nav-buttons>
     <ion-content class="padding">
-
-        <blockquote ng-show="reviews.review.stars">
-            <strong>{{reviews.review.stars}} Stars</strong>
-            {{reviews.review.body}}
-            <cite class="clearfix">—{{reviews.review.author}}</cite>
-        </blockquote>
-
-        <h4>Submit a Review</h4>
-        <fieldset class="form-group">
-            <select ng-model="reviews.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
-                <option value="">Rate the Product</option>
-            </select>
-        </fieldset>
-        <fieldset class="form-group">
-            <textarea ng-model="reviews.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
-        </fieldset>
-        <fieldset class="form-group">
-            <input ng-model="reviews.review.author" type="email" class="form-control" placeholder="jimmyDean@sausage.com" title="Email" />
-        </fieldset>
-        <fieldset class="form-group">
-            <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
-        </fieldset>
-        </form>
-
+        <ng-form novalidate class="css-form" ng-init="formData.stars='3'">
+            <div class="list card">
+                <div class="item item-divider calm-bg">Picture</div>
+                    <img align="center" ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
+                    <img align="center" ng-show="imgURI === undefined" ng-src="http://placehold.it/100x100">
+                </div>
+            <div class="item item-divider calm-bg">Review</div>
+            <div class="item item-body">
+                <select ng-model="formData.stars">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>Stars
+                <select ng-model="formData.sizes">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>Category<br/><br/>
+                <select ng-model="formData.sizes">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>Brand
+                <select ng-model="formData.sizes">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>Size<br/><br/>
+                <label class="item item-input">
+                    <textarea ng-model="formData.comments" placeholder="Comments" rows="6" cols="50"></textarea>
+                </label>
+            </div>
+            <br /><button ng-disabled="imgURI == undefined || formData.comments === undefined" ng-click="upload(this)">Submit</button><br />
+        </ng-form>
     </ion-content>
 </ion-view>

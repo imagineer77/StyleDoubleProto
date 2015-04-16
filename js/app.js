@@ -1,4 +1,4 @@
-angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.services'])
+angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.services', 'ngCordova'])
 
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
@@ -12,6 +12,10 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                 StatusBar.styleDefault();
             }
         });
+    })
+
+    .config(function($compileProvider){
+        $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|file|blob|cdvfile|content):|data:image\//);
     })
 
     .config(function($stateProvider, $urlRouterProvider) {
