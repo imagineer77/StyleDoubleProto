@@ -156,7 +156,8 @@ angular.module('styledouble.controllers', [])
     $scope.upload = function($scope) {
         alert("Uploaded!");
         $scope.imgURI = undefined;
-        $scope.comments = "";
+        //$scope.comments = "";
+        $scope.formData = {};
     }
 });
 
