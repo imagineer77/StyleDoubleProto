@@ -1,30 +1,3 @@
-<!--
-
-<ion-view title="Pictures">
-    <ion-nav-buttons side="left">
-        <button class="button button-icon ion-image" ng-click="selectPicture()"></button>
-    </ion-nav-buttons>
-    <ion-nav-buttons side="right">
-        <button class="button button-icon icon ion-camera" ng-click="takePicture()"></button>
-    </ion-nav-buttons>
-    <ion-content class="has-header padding">
-
-        <div class="list">
-            <label class="item item-input item-stacked-label">
-                <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
-                <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300">
-            <label class="item item-input item-stacked-label">
-                <span class="review-label">Review</span>
-                <input type='text' name='review' ng-model='formData.review' required placeholder="Review">
-            </label>
-        </div>
-        <button ng-disabled="!isValid(this)" ng-click="finish(this)">
-            Upload
-        </button>
-
-    </ion-content>
-</ion-view>
--->
 
 <ion-view view-title="Add Review" class="title">
     <ion-nav-buttons side="left">
@@ -42,38 +15,34 @@
                 </div>
             <div class="item item-divider calm-bg">Review</div>
             <div class="item item-body">
-                Stars
                 <select ng-model="formData.stars">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                </select>
-                Category
+                </select>Stars
                 <select ng-model="formData.sizes">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                </select>
-                Brand
+                </select>Category<br/><br/>
                 <select ng-model="formData.sizes">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                </select>
-                Size
+                </select>Brand
                 <select ng-model="formData.sizes">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                </select> <br/><br/>
+                </select>Size<br/><br/>
                 <label class="item item-input">
                     <textarea ng-model="formData.comments" placeholder="Comments" rows="6" cols="50"></textarea>
                 </label>
