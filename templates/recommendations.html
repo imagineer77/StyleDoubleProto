@@ -1,10 +1,10 @@
 <ion-view view-title="Recommendations">
 <ion-content>
     <ion-list>
-        <ion-item class="item-avatar item-text-wrap" ng-repeat="recommendation in recommendations" href="#/tab/recommendations/{{recommendation.id}}">
+        <ion-item class="item-text-wrap" ng-repeat="recommendation in recommendations" href="#/tab/recommendations/{{recommendation.id}}">
             <img src="{{recommendation.image}}" style="width: 60px; height: 60px">
             <div star-rating rating-value="recommendation.rating.current" max="recommendation.rating.max" ></div>
-            {{recommendation.summary}}
+            <div ng-bind-html="recommendation.summary">{{recommendation.summary}}</div>
         </ion-item>
     </ion-list>
 </ion-content>

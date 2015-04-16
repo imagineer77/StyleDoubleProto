@@ -1,4 +1,5 @@
-angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.services'])
+angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.services', 'ngCordova',
+                'ngAnimate', 'ngTouch', 'ngSanitize'])
 
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
@@ -12,6 +13,10 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                 StatusBar.styleDefault();
             }
         });
+    })
+
+    .config(function($compileProvider){
+        $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|file|blob|cdvfile|content):|data:image\//);
     })
 
     .config(function($stateProvider, $urlRouterProvider) {
@@ -81,6 +86,16 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                 }
             })
 
+            .state('tab.profile', {
+                url: '/profile',
+                views: {
+                    'doubles': {
+                        templateUrl: 'templates/profile.html',
+                        controller: 'ProfileCtrl'
+                    }
+                }
+            })
+
             .state('tab.upload', {
                 url: '/upload',
                 views: {
@@ -91,17 +106,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                 }
             });
 
-/*
-        .state('tab.profile', {
-            url: '/profile',
-            views: {
-                'doubles': {
-                    templateUrl: 'templates/profile.html',
-                    controller: 'ProfileCtrl'
-                }
-            }
-        })
-
+        /*
             .state('tab.gender', {
                 url: "/gender",
                 views: {

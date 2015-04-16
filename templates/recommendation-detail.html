@@ -2,7 +2,7 @@
     <ion-content class="padding">
         <img ng-src="{{recommendation.image}}" style="width: 60px; height: 60px">
         <div star-rating rating-value="recommendation.rating.current" max="recommendation.rating.max" ></div></span>
-        {{recommendation.detail}}
+        <div ng-bind-html="recommendation.detail">{{recommendation.detail}}</div>
         <cite class="clearfix">{{recommendation.createdOn | date}}</cite>
     </ion-content>
 </ion-view>

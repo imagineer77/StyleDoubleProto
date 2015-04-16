@@ -60,86 +60,125 @@ angular.module('styledouble.controllers', [])
         return DataStore;
     })
 
-    .directive('starRating', function () {
-        return {
-            restrict: 'A',
-            template: '<ul class="rating">' +
-            '<li ng-repeat="star in stars" ng-class="star">' +
-            '\u2605' +
-            '</li>' +
-            '</ul>',
-            scope: {
-                ratingValue: '=',
-                max: '='
-            },
-            link: function (scope, elem, attrs) {
-                scope.stars = [];
-                for (var i = 0; i < scope.max; i++) {
-                    scope.stars.push({
-                        filled: i < scope.ratingValue
-                    });
-                }
+.directive('starRating', function () {
+    return {
+        restrict: 'A',
+        template: '<ul class="rating">' +
+        '<li ng-repeat="star in stars" ng-class="star">' +
+        '\u2605' +
+        '</li>' +
+        '</ul>',
+        scope: {
+            ratingValue: '=',
+            max: '='
+        },
+        link: function (scope, elem, attrs) {
+            scope.stars = [];
+            for (var i = 0; i < scope.max; i++) {
+                scope.stars.push({
+                    filled: i < scope.ratingValue
+                });
             }
         }
-    })
+    }
+})
 
-    .controller('DashCtrl', function($scope, $state) {
-        $scope.text = "Welcome";
-    })
+.controller('ProfileCtrl', function($scope, $state) {
+    $scope.text = "Profile";
+})
 
-    .controller('DoublesCtrl', function($scope, Doubles) {
-        $scope.doubles = Doubles.all();
-        $scope.remove = function(double) {
-            Doubles.remove(double);
-        }
-    })
+.controller('DashCtrl', function($scope, $state) {
+    $scope.text = "Welcome";
+})
 
-    .controller('DoubleDetailCtrl', function($scope, $stateParams, Doubles) {
-        $scope.double = Doubles.get($stateParams.doubleId);
-    })
+.controller('DoublesCtrl', function($scope, Doubles) {
+    $scope.doubles = Doubles.all();
+    $scope.remove = function(double) {
+        Doubles.remove(double);
+    }
+})
 
-    .controller('RecommendationsCtrl', function($scope, Recommendations) {
-        $scope.recommendations = Recommendations.all();
-        $scope.remove = function(recommendation) {
-            Recommendations.remove(recommendation);
-        }
-    })
+.controller('DoubleDetailCtrl', function($scope, $stateParams, Doubles) {
+    $scope.double = Doubles.get($stateParams.doubleId);
+})
 
-    .controller('RecommendationDetailCtrl', function($scope, $stateParams, Recommendations) {
-        $scope.recommendation = Recommendations.get($stateParams.recommendationId);
-    })
+.controller('RecommendationsCtrl', function($scope, Recommendations) {
+    $scope.recommendations = Recommendations.all();
+    $scope.remove = function(recommendation) {
+        Recommendations.remove(recommendation);
+    }
+})
 
-    .controller('UploadCtrl', function($scope, $state) {
-        $scope.text = "Upload";
-    })
+.controller('RecommendationDetailCtrl', function($scope, $stateParams, Recommendations) {
+    $scope.recommendation = Recommendations.get($stateParams.recommendationId);
+})
 
-    .controller('ProfileCtrl', function($scope, $state) {
-        $scope.text = "Profile";
-    })
 
-    .controller("UploadCtrl", function($scope, Doubles) {
+.controller('UploadCtrl', function($scope, $cordovaCamera, $cordovaImagePicker) {
+    var options1 = {
+        maximumImagesCount: 100,
+        width: 100,
+        height: 100,
+        quality: 80
+    };
 
-        $scope.ratings = [{
-            current: 5,
-            max: 10
-        }, {
-            current: 3,
-            max: 5
-        }];
+    $scope.selectPicture = function() {
+        $cordovaImagePicker.getPictures(options1)
+            .then(function (results) {
+                for (var i = 0; i < results.length; i++) {
+                    $scope.imgURI = results[i];
+                }
+            }, function (error) {
+                alert(error);
+            });
+    };
 
-        this.review = {};
-
-        $scope.reviews = Dobules.all();
-        $scope.remove = function(review) {
-            Reviews.remove(review);
-        }
-
-        this.addReview = function(product){
-            this.review.createdOn = Date.now();
-            product.reviews.push(this.review);
-            this.review = {};
+    $scope.takePicture = function() {
+        var options2 = {
+            quality : 75,
+            destinationType : Camera.DestinationType.DATA_URL,
+            sourceType :Camera.PictureSourceType.CAMERA,
+            allowEdit : true,
+            encodingType: Camera.EncodingType.JPEG,
+            targetWidth: 100,
+            targetHeight: 100,
+            popoverOptions: CameraPopoverOptions,
+            saveToPhotoAlbum: false
         };
+
+        $cordovaCamera.getPicture(options2).then(function(imageData) {
+            $scope.imgURI = "data:image/jpeg;base64," + imageData;
+        }, function(err) {
+            alert("No camera availabel on iPhone Sim!");
+        });
+    };
+
+    $scope.upload = function($scope) {
+        alert("Uploaded!");
+        $scope.imgURI = undefined;
+        $scope.comments = "";
+    }
+});
+
+
+/*
+.controller('UploadCtrl', function($scope,  $timeout, $cordovaFileTransfer) {
+
+    $scope.fileName = '';
+
+    $scope.openFileDialog = function () {
+        ionic.trigger('click', {target: document.getElementById('file')});
+    };
+
+
+    angular.element('#file').on('change', function (event) {
+        var file = event.target.files[0];
+        $scope.fileName = file.name;
+        $scope.$apply();
     });
+});
+*/
+
 
 /*
 

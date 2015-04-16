@@ -20,15 +20,15 @@
                         </label>
                     </div>
             </div>
-                <div class="item item-divider calm-bg">Born in (Optional, but will help us match you)</div>
-                    <div class="item item-body">
-                        <select ng-model="formData.birthyear">
-                            <option ng-repeat="year in years" title="{{year.title}}" value="{{year.value}}">
-                                {{year.displayName}}
-                            </option>
-                        </select>
-                    </div>
+            <div class="item item-divider calm-bg">Born in (Optional, but will help us match you)</div>
+                <div class="item item-body">
+                    <select ng-model="formData.birthyear">
+                        <option ng-repeat="year in years" title="{{year.title}}" value="{{year.value}}">
+                            {{year.displayName}}
+                        </option>
+                    </select>
                 </div>
+            </div>
             <br /><button ng-click="next(this)">Next</button><br />
         </form>
         <br /><br />For debugging: {{formData}}
