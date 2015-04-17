@@ -170,7 +170,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
         .state('tab.profile', {
             url: '/profile',
             views: {
-                'doubles': {
+                'profile': {
                     templateUrl: 'templates/profile.html',
                     controller: 'ProfileCtrl'
                 }
@@ -190,7 +190,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
             .state('tab.height-weight', {
                 url: '/height-weight',
                 views: {
-                    'height-weight': {
+                    'profile': {
                         templateUrl: 'templates/height-weight.html',
                         controller: 'HeightWeightCtrl'
                     }
@@ -200,7 +200,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
             .state('tab.body-shape-female', {
                 url: "/body-shape-female",
                 views: {
-                    'body-shape': {
+                    'profile': {
                         templateUrl: 'templates/body-shape-female.html',
                         controller: 'BodyShapeFemaleCtrl'
                     }
@@ -210,7 +210,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
             .state('tab.body-shape-male', {
                 url: "/body-shape-male",
                 views: {
-                    'body-shape': {
+                    'profile': {
                         templateUrl: 'templates/body-shape-male.html',
                         controller: 'BodyShapeMaleCtrl'
                     }
@@ -220,7 +220,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
             .state('tab.measurements', {
                 url: '/measurements',
                 views: {
-                    'measurements': {
+                    'profile': {
                         templateUrl: 'templates/measurements.html',
                         controller: 'MeasurementsCtrl'
                     }
@@ -230,7 +230,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
             .state('tab.measurement-details', {
                 url: '/measurement-details',
                 views: {
-                    'measurement-details': {
+                    'profile': {
                         templateUrl: 'templates/measurement-details.html',
                         controller: 'MeasurementDetailsCtrl'
                     }
@@ -240,7 +240,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
             .state('tab.my-sizes', {
                 url: '/my-sizes',
                 views: {
-                    'my-sizes': {
+                    'profile': {
                         templateUrl: 'templates/my-sizes.html',
                         controller: 'MySizesCtrl'
                     }
@@ -250,7 +250,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
             .state('tab.brands-like', {
                 url: '/brands-like',
                 views: {
-                    'brands-like': {
+                    'profile': {
                         templateUrl: 'templates/brands-like.html',
                         controller: 'BrandsLikeCtrl'
                     }
@@ -260,7 +260,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
             .state('tab.cloth-returns', {
                 url: '/cloth-returns',
                 views: {
-                    'cloth-returns': {
+                    'profile': {
                         templateUrl: 'templates/cloth-returns.html',
                         controller: 'ClothReturnsCtrl'
                     }
@@ -270,7 +270,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
             .state('tab.account', {
                 url: '/account',
                 views: {
-                    'account': {
+                    'profile': {
                         templateUrl: 'templates/account.html',
                         controller: 'AccountCtrl'
                     }
