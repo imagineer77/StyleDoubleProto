@@ -85,12 +85,12 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
                 }
             })
 
-            .state('tab.profile', {
-                url: '/profile',
+            .state('tab.account', {
+                url: '/account',
                 views: {
-                    'doubles': {
-                        templateUrl: 'templates/profile.html',
-                        controller: 'ProfileCtrl'
+                    'account': {
+                        templateUrl: 'templates/account.html',
+                        controller: 'AccountCtrl'
                     }
                 }
             })

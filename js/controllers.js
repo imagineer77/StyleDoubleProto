@@ -159,7 +159,7 @@ angular.module('styledouble.controllers', [])
         //$scope.comments = "";
         $scope.formData = {};
     }
-});
+})
 
 
 /*
@@ -384,7 +384,7 @@ angular.module('styledouble.controllers', [])
             $state.go('tab.account');
         };
     })
-
+*/
     .controller('AccountCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
 
@@ -408,10 +408,12 @@ angular.module('styledouble.controllers', [])
                 + "Chest: " + +DataStore.chest + " in" + "\n"
                 + "Waist: " + +DataStore.waist + " in" + "\n"
                 + "Hips: " + +DataStore.hips + " in");
+
             }
             else {
                 alert("Passwords must match!");
             }
         };
     });
-*/
+
+
