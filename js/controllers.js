@@ -1,118 +1,83 @@
 angular.module('styledouble.controllers', [])
 
-
-.factory('DataStore', function() {
-        //create datastore with default values
-        /*var DataStore = {
-         gender:         'male',
-         birthyear:      '1997',
-         heightfeet:     '5',
-         heightinches:   '0',
-         weight:         '120',
-         neck:           '14',
-         chest:          '34',
-         waist:          '30',
-         hips:           '32'
-         };*/
-
-        var DataStore = {};
-
-        DataStore.setGender = function (value) {
-            DataStore.gender = value;
-        };
-
-        DataStore.setBirthYear = function (value) {
-            DataStore.birthyear = value;
-        };
-
-        DataStore.setHeightFeet = function (value) {
-            DataStore.hieghtfeet = value;
-        };
-
-        DataStore.setHeightInches = function (value) {
-            DataStore.heightinches = value;
-        };
-
-        DataStore.setWeight = function (value) {
-            DataStore.weight = value;
-        };
-
-        DataStore.setNeck = function (value) {
-            DataStore.neck = value;
-        };
-
-        DataStore.setChest = function (value) {
-            DataStore.chest = value;
-        };
-
-        DataStore.setWaist = function (value) {
-            DataStore.waist = value;
-        };
-
-        DataStore.setHips = function (value) {
-            DataStore.hips = value;
+    .controller('SignInCtrl', function($scope, $state) {
+        $scope.signIn = function(user) {
+            console.log('Sign-In', user);
+            //$state.go('tab.home');
+            $state.go('tab.recommendations');
+            //$state.go('tab.doubles');
         };
         /*
-         DataStore.setGapMin = function (value) {
-         DataStore.gapmin = value;
-         };
-         */
-        return DataStore;
+        $scope.forgetPassword = function() {
+            $state.go('tab.forgot-password');
+        };
+        */
+        /*
+        $scope.createAccount = function() {
+            $state.go('tab.gender');
+        };
+        */
     })
 
-.directive('starRating', function () {
-    return {
-        restrict: 'A',
-        template: '<ul class="rating">' +
-        '<li ng-repeat="star in stars" ng-class="star">' +
-        '\u2605' +
-        '</li>' +
-        '</ul>',
-        scope: {
-            ratingValue: '=',
-            max: '='
-        },
-        link: function (scope, elem, attrs) {
-            scope.stars = [];
-            for (var i = 0; i < scope.max; i++) {
-                scope.stars.push({
-                    filled: i < scope.ratingValue
-                });
+    .controller('HomeCtrl', function($scope) {
+        console.log('HomeCtrl');
+    })
+
+    .directive('starRating', function () {
+        return {
+            restrict: 'A',
+            template: '<ul class="rating">' +
+            '<li ng-repeat="star in stars" ng-class="star">' +
+            '\u2605' +
+            '</li>' +
+            '</ul>',
+            scope: {
+                ratingValue: '=',
+                max: '='
+            },
+            link: function (scope, elem, attrs) {
+                scope.stars = [];
+                for (var i = 0; i < scope.max; i++) {
+                    scope.stars.push({
+                        filled: i < scope.ratingValue
+                    });
+                }
             }
         }
-    }
-})
+    })
 
-.controller('ProfileCtrl', function($scope, $state) {
-    $scope.text = "Profile";
-})
+    .controller('ProfileCtrl', function($scope, $state) {
+        $scope.text = "Profile";
+        $scope.next = function() {
+            $state.go('tab.gender');
+        };
+    })
 
-.controller('DashCtrl', function($scope, $state) {
-    $scope.text = "Welcome";
-})
+    .controller('DashCtrl', function($scope, $state) {
+        $scope.text = "Welcome";
+    })
 
-.controller('DoublesCtrl', function($scope, Doubles) {
-    $scope.doubles = Doubles.all();
-    $scope.remove = function(double) {
-        Doubles.remove(double);
-    }
-})
+    .controller('DoublesCtrl', function($scope, Doubles) {
+        $scope.doubles = Doubles.all();
+        $scope.remove = function(double) {
+            Doubles.remove(double);
+        };
+    })
 
-.controller('DoubleDetailCtrl', function($scope, $stateParams, Doubles) {
-    $scope.double = Doubles.get($stateParams.doubleId);
-})
+    .controller('DoubleDetailCtrl', function($scope, $stateParams, Doubles) {
+        $scope.double = Doubles.get($stateParams.doubleId);
+    })
 
-.controller('RecommendationsCtrl', function($scope, Recommendations) {
-    $scope.recommendations = Recommendations.all();
-    $scope.remove = function(recommendation) {
-        Recommendations.remove(recommendation);
-    }
-})
+    .controller('RecommendationsCtrl', function($scope, Recommendations) {
+        $scope.recommendations = Recommendations.all();
+        $scope.remove = function(recommendation) {
+            Recommendations.remove(recommendation);
+        };
+    })
 
-.controller('RecommendationDetailCtrl', function($scope, $stateParams, Recommendations) {
-    $scope.recommendation = Recommendations.get($stateParams.recommendationId);
-})
-
+    .controller('RecommendationDetailCtrl', function($scope, $stateParams, Recommendations) {
+        $scope.recommendation = Recommendations.get($stateParams.recommendationId);
+    })
 
 .controller('UploadCtrl', function($scope, $cordovaCamera, $cordovaImagePicker) {
     var options1 = {
@@ -158,7 +123,7 @@ angular.module('styledouble.controllers', [])
         $scope.imgURI = undefined;
         //$scope.comments = "";
         $scope.formData = {};
-    }
+    };
 })
 
 
@@ -188,18 +153,18 @@ angular.module('styledouble.controllers', [])
             $state.go('tab.gender');
         };
     })
-
+*/
     .controller('GenderCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
-        /!*
-         // if use this, values need to be carefully reset
-         $scope.tempGender = {};
-         if(DataStore.gender === 'female' || $scope.formData.gender === 'female') {
-         $scope.tempGender = { value: 'female' };
-         } else {
-         $scope.tempGender = { value: 'male' };
-         }
-         *!/
+        /*
+        // if use this, values need to be carefully reset
+        $scope.tempGender = {};
+        if(DataStore.gender === 'female' || $scope.formData.gender === 'female') {
+            $scope.tempGender = { value: 'female' };
+        } else {
+            $scope.tempGender = { value: 'male' };
+        };
+        */
         $scope.years = [];
         for (var i = 2015; i >= 1915; i--) {
             var year = i.toString();
@@ -207,6 +172,7 @@ angular.module('styledouble.controllers', [])
         }
         $scope.formData.birthyear = "2015";
 
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " + $scope.formData.gender + ":" + $scope.formData.birthyear);
             DataStore.setGender($scope.formData.gender);
@@ -232,16 +198,15 @@ angular.module('styledouble.controllers', [])
         }
         $scope.formData.weight = "80";
 
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " + $scope.formData.heightfeet + ":" + $scope.formData.heightinches + ":" + $scope.formData.weight);
             DataStore.setHeightFeet($scope.formData.heightfeet);
             DataStore.setHeightInches($scope.formData.heightinches);
             DataStore.setWeight($scope.formData.weight);
-
-            if(DataStore.gender === 'female') {
+            if (DataStore.gender === 'female') {
                 $state.go('tab.body-shape-female');
-            }
-            else {
+            } else {
                 $state.go('tab.body-shape-male');
             };
         };
@@ -249,15 +214,16 @@ angular.module('styledouble.controllers', [])
 
     .controller('BodyShapeFemaleCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
-        /!*
-         // if use this, values need to be carefully reset
-         $scope.tempGender = {};
-         if(DataStore.gender === 'female') {
-         $scope.tempGender = { value: 'female' };
-         } else {
-         $scope.tempGender = { value: 'male' };
-         }
-         *!/
+        /*
+        // if use this, values need to be carefully reset
+        $scope.tempGender = {};
+        if(DataStore.gender === 'female') {
+            $scope.tempGender = { value: 'female' };
+        } else {
+            $scope.tempGender = { value: 'male' };
+        }
+        */
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
@@ -265,21 +231,22 @@ angular.module('styledouble.controllers', [])
                 $state.go('tab.measurements');
             } else {
                 $state.go('tab.gender');
-            }
+            };
         };
     })
 
     .controller('BodyShapeMaleCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
-        /!*
-         // if use this, values need to be carefully reset
-         $scope.tempGender = {};
-         if(DataStore.gender === 'male') {
-         $scope.tempGender = { value: 'male' };
-         } else {
-         $scope.tempGender = { value: 'female' };
-         }
-         *!/
+        /*
+        // if use this, values need to be carefully reset
+        $scope.tempGender = {};
+        if(DataStore.gender === 'male') {
+            $scope.tempGender = { value: 'male' };
+        } else {
+            $scope.tempGender = { value: 'female' };
+        }
+        */
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
@@ -287,50 +254,50 @@ angular.module('styledouble.controllers', [])
                 $state.go('tab.measurements');
             } else {
                 $state.go('tab.gender');
-            }
+            };
         };
 
-// http://ionicframework.com/docs/api/service/$ionicPopover/
-        /!*
-         // .fromTemplate() method
-         var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
+        // http://ionicframework.com/docs/api/service/$ionicPopover/
+        /*
+        // .fromTemplate() method
+        var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
 
-         $scope.popover = $ionicPopover.fromTemplate(template, {
-         scope: $scope
-         });
+        $scope.popover = $ionicPopover.fromTemplate(template, {
+            scope: $scope
+        });
 
-         // .fromTemplateUrl() method
-         $ionicPopover.fromTemplateUrl('my-popover.html', {
-         scope: $scope
-         }).then(function(popover) {
-         $scope.popover = popover;
-         });
+        // .fromTemplateUrl() method
+        $ionicPopover.fromTemplateUrl('my-popover.html', {
+            scope: $scope
+        }).then(function(popover) {
+            $scope.popover = popover;
+        });
 
-         $scope.openPopover = function($event) {
-         $scope.popover.show($event);
-         };
-         $scope.closePopover = function() {
-         $scope.popover.hide();
-         };
-         //Cleanup the popover when we're done with it!
-         $scope.$on('$destroy', function() {
-         $scope.popover.remove();
-         });
-         // Execute action on hide popover
-         $scope.$on('popover.hidden', function() {
-         // Execute action
-         });
-         // Execute action on remove popover
-         $scope.$on('popover.removed', function() {
-         // Execute action
-         });
-         *!/
+        $scope.openPopover = function($event) {
+            $scope.popover.show($event);
+        };
+        $scope.closePopover = function() {
+            $scope.popover.hide();
+        };
+        //Cleanup the popover when we're done with it!
+        $scope.$on('$destroy', function() {
+            $scope.popover.remove();
+        });
+        // Execute action on hide popover
+        $scope.$on('popover.hidden', function() {
+            // Execute action
+        });
+        // Execute action on remove popover
+        $scope.$on('popover.removed', function() {
+            // Execute action
+        });
+        */
     })
 
     .controller('MeasurementsCtrl', function($scope, $state, DataStore) {
         $scope.setValues = function() {
-            /!*alert("Clicked: " + $scope.formData.neck + ":" + $scope.formData.chest
-             + ":" + $scope.formData.waist + ":" + $scope.formData.hips);*!/
+            /*alert("Clicked: " + $scope.formData.neck + ":" + $scope.formData.chest
+            + ":" + $scope.formData.waist + ":" + $scope.formData.hips);*/
             DataStore.setNeck($scope.formData.neck);
             DataStore.setChest($scope.formData.chest);
             DataStore.setWaist($scope.formData.waist);
@@ -338,6 +305,7 @@ angular.module('styledouble.controllers', [])
         };
 
         $scope.formData ={};
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             this.setValues();
             $state.go('tab.brands-like');
@@ -351,6 +319,7 @@ angular.module('styledouble.controllers', [])
 
     .controller('MeasurementDetailsCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here???
@@ -360,6 +329,7 @@ angular.module('styledouble.controllers', [])
 
     .controller('BrandsLikeCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
@@ -369,6 +339,7 @@ angular.module('styledouble.controllers', [])
 
     .controller('MySizesCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
@@ -378,13 +349,20 @@ angular.module('styledouble.controllers', [])
 
     .controller('ClothReturnsCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
             $state.go('tab.account');
         };
     })
-*/
+
+    .controller('ForgetPasswordCtrl', function($scope, $state) {
+        //$scope.backToSignIn = function() {
+        //    $state.go('tab.profile');
+        //};
+    })
+
     .controller('AccountCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
 
@@ -394,6 +372,7 @@ angular.module('styledouble.controllers', [])
                 $scope.formData.passwordx.length > 0;
         };
 
+        // TODO: data save to db to create account
         $scope.finish = function() {
             if($scope.formData.password === $scope.formData.passwordx)
             {
@@ -408,12 +387,8 @@ angular.module('styledouble.controllers', [])
                 + "Chest: " + +DataStore.chest + " in" + "\n"
                 + "Waist: " + +DataStore.waist + " in" + "\n"
                 + "Hips: " + +DataStore.hips + " in");
-
-            }
-            else {
+            } else {
                 alert("Passwords must match!");
-            }
+            };
         };
     });
-
-

@@ -1,3 +1,35 @@
+/* Add your own CSS */
+/*
+table {
+	border-spacing: 0.5rem;
+}
+*/
+/*
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th,td {
+    padding: 15px;
+}
+*/
+td {
+    border-collapse: collapse;
+    /* border: 1px black solid; */
+	border: hidden;
+	/* visibility: hidden; */ /* hide all */
+}
+
+.rotate-90-anticlockwise {
+          transform: rotate(-90.0deg);  /* Standard */
+     -moz-transform: rotate(-90.0deg);  /* FF3.5+ */
+       -o-transform: rotate(-90.0deg);  /* Opera 10.5 */
+  -webkit-transform: rotate(-90.0deg);  /* Saf3.1+, Chrome */
+      -ms-transform: rotate(-90.0deg);  /* IE9+ */
+             filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083);  /* IE6,IE7 */
+         -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)"; /* IE8 */
+}
+
 .item.wrap, .item-content.wrap {
     white-space: normal;
 }

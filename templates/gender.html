@@ -3,24 +3,23 @@
         <form novalidate class="css-form" ng-init="formData.gender='female'">
             <div class="list card">
                 <div class="item item-divider calm-bg">I am a  (required)</div>
-                    <div class="list">
-                        <label class="item item-radio">
-                            <input type="radio" ng-model="formData.gender" value="female">
-                            <div class="item-content">
-                                Female
-                            </div>
-                            <i class="radio-icon ion-checkmark"></i>
-                        </label>
-                        <label class="item item-radio">
-                            <input type="radio" ng-model="formData.gender" value="male">
-                            <div class="item-content">
-                                Male
-                            </div>
-                            <i class="radio-icon ion-checkmark"></i>
-                        </label>
-                    </div>
-            </div>
-            <div class="item item-divider calm-bg">Born in (Optional, but will help us match you)</div>
+                <div class="list">
+                    <label class="item item-radio">
+                        <input type="radio" ng-model="formData.gender" value="female">
+                        <div class="item-content">
+                            Female
+                        </div>
+                        <i class="radio-icon ion-checkmark"></i>
+                    </label>
+                    <label class="item item-radio">
+                        <input type="radio" ng-model="formData.gender" value="male">
+                        <div class="item-content">
+                            Male
+                        </div>
+                        <i class="radio-icon ion-checkmark"></i>
+                    </label>
+                </div>
+                <div class="item item-divider calm-bg">Born in (Optional, but will help us match you)</div>
                 <div class="item item-body">
                     <select ng-model="formData.birthyear">
                         <option ng-repeat="year in years" title="{{year.title}}" value="{{year.value}}">
@@ -29,8 +28,32 @@
                     </select>
                 </div>
             </div>
-            <br /><button ng-click="next(this)">Next</button><br />
+            <!--<br /><a class="button icon icon-right ion-arrow-right-a" href="#/tab/height-weight">Next</a>-->
+            <!--<br /><button ng-click="next(this)">Next</button><br />-->
+            <br /><button class="button icon icon-right ion-arrow-right-a" ng-click="next(this)">Next (1 of 8)</button><br />
+            <!--<br /><button class="button button-positive" ng-click="next(this)">Next</button><br />-->
+            <!--<br /><button class="button button-block button-positive" ng-click="next(this)">Next</button><br />-->
+            <!--
+            <div class="list card">
+                <div class="list" href="#/tab/height-weight">
+                    <label class="item item-thumbnail-left">
+                        <img src="img/simple_next_right_arrow.jpg">
+                    </label>
+                </div>
+            </div>
+            -->
         </form>
-        <br /><br />For debugging: {{formData}}
+        <!--
+        <br />
+        <a class="button icon ion-arrow-right-b" href="#/tab/height-weight"></a>
+        -->
+        <!--
+        <ion-list>
+            <ion-item href="#/tab/height-weight">
+                <img src="img/simple_next_right_arrow.jpg">
+            </ion-item>
+        <ion-list>
+        -->
+        <!--<br /><br />For debugging: {{formData}}-->
     </ion-content>
 </ion-view>

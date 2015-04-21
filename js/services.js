@@ -235,7 +235,7 @@ angular.module('styledouble.services', [])
     }
 })
 
-
+/*
 .factory('DataStore', function() {
    //create datastore with default values
     var DataStore = {
@@ -250,6 +250,73 @@ angular.module('styledouble.services', [])
     DataStore.setBirthYear = function (value) {
         DataStore.birthyear = value;
     };
+
+    return DataStore;
+});
+*/
+
+.factory('DataStore', function() {
+
+    //create datastore with default values
+    /*var DataStore = {
+     gender:         'male',
+     birthyear:      '1997',
+     heightfeet:     '5',
+     heightinches:   '0',
+     weight:         '120',
+     neck:           '14',
+     chest:          '34',
+     waist:          '30',
+     hips:           '32'
+     };*/
+
+    var DataStore = {};
+
+    DataStore.setGender = function (value) {
+        DataStore.gender = value;
+    };
+
+    DataStore.setBirthYear = function (value) {
+        DataStore.birthyear = value;
+    };
+
+    DataStore.setHeightFeet = function (value) {
+        DataStore.heightfeet = value;
+    };
+
+    DataStore.setHeightInches = function (value) {
+        DataStore.heightinches = value;
+    };
+
+    DataStore.setWeight = function (value) {
+        DataStore.weight = value;
+    };
+
+    DataStore.setNeck = function (value) {
+        DataStore.neck = value;
+    };
+
+    DataStore.setChest = function (value) {
+        DataStore.chest = value;
+    };
+
+    DataStore.setWaist = function (value) {
+        DataStore.waist = value;
+    };
+
+    DataStore.setHips = function (value) {
+        DataStore.hips = value;
+    };
+
+    DataStore.setInseam = function (value) {
+        DataStore.inseam = value;
+    };
+
+    /*
+    DataStore.setGapMin = function (value) {
+        DataStore.gapmin = value;
+         };
+    */
 
     return DataStore;
 });
