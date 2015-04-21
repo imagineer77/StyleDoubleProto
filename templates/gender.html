@@ -19,24 +19,20 @@
                         <i class="radio-icon ion-checkmark"></i>
                     </label>
                 </div>
-            <!--
-                <p>Example of Ionic tabs. Navigate to each tab, and
-                navigate to child views of each tab and notice how
-                each tab has its own navigation history.</p>
-                <p>
-                  <a class="button icon icon-right ion-chevron-right" href="#/tab/facts">Scientific Facts</a>
-                </p>
-            -->
+                <div class="item item-divider calm-bg">Born in (Optional, but will help us match you)</div>
+                <div class="item item-body">
+                    <select ng-model="formData.birthyear">
+                        <option ng-repeat="year in years" title="{{year.title}}" value="{{year.value}}">
+                            {{year.displayName}}
+                        </option>
+                    </select>
+                </div>
             </div>
-            <div class="item item-divider calm-bg">Born in (Optional, but will help us match you)</div>
-            <div class="item item-body">
-                <select ng-model="formData.birthyear">
-                    <option ng-repeat="year in years" title="{{year.title}}" value="{{year.value}}">
-                        {{year.displayName}}
-                    </option>
-                </select>
-            </div>
+            <!--<br /><a class="button icon icon-right ion-arrow-right-a" href="#/tab/height-weight">Next</a>-->
             <!--<br /><button ng-click="next(this)">Next</button><br />-->
+            <br /><button class="button icon icon-right ion-arrow-right-a" ng-click="next(this)">Next (1 of 8)</button><br />
+            <!--<br /><button class="button button-positive" ng-click="next(this)">Next</button><br />-->
+            <!--<br /><button class="button button-block button-positive" ng-click="next(this)">Next</button><br />-->
             <!--
             <div class="list card">
                 <div class="list" href="#/tab/height-weight">
@@ -47,11 +43,17 @@
             </div>
             -->
         </form>
+        <!--
+        <br />
+        <a class="button icon ion-arrow-right-b" href="#/tab/height-weight"></a>
+        -->
+        <!--
         <ion-list>
             <ion-item href="#/tab/height-weight">
                 <img src="img/simple_next_right_arrow.jpg">
             </ion-item>
         <ion-list>
+        -->
         <br /><br />For debugging: {{formData}}
     </ion-content>
 </ion-view>

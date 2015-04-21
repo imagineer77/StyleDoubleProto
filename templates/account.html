@@ -44,8 +44,9 @@
                     </label>
                 </div>
             </div>
-            <button ng-disabled="!isValid(this)" ng-click="finish(this)">
-                Next
+            <!-- class="button" not used will default type to submit -->
+            <button class="button button-positive icon icon-center ion-log-in" ng-disabled="!isValid(this)" ng-click="finish(this)">
+                Save Profile & Create Account
             </button>
         </form>
 

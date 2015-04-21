@@ -1,23 +1,22 @@
 <ion-view view-title="styleDouble">
     <ion-content class="padding">
-        <form novalidate class="css-form">
+        <!--<form novalidate class="css-form">-->
             <div class="list card">
                 <div class="item item-divider calm-bg">My height  (required)</div>
-                    <div class="item item-body">
-                        <div>
-                            <select id="heightfeet" name="heightfeet" ng-model="formData.heightfeet" ng-init="formData.heightfeet='5'">
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                            ft
-                            <select ng-model="formData.heightinches">
-                                <option ng-repeat="inch in inches" title="{{inch.title}}" value="{{inch.value}}">
-                                    {{inch.displayName}}
-                                </option>
-                            </select>
-                            inches
-                        </div>
+                <div class="item item-body">
+                    <div>
+                        <select id="heightfeet" name="heightfeet" ng-model="formData.heightfeet" ng-init="formData.heightfeet='5'">
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        ft
+                        <select ng-model="formData.heightinches">
+                            <option ng-repeat="inch in inches" title="{{inch.title}}" value="{{inch.value}}">
+                                {{inch.displayName}}
+                            </option>
+                        </select>
+                        inches
                     </div>
                 </div>
                 <div class="item item-divider calm-bg">My weight  (Required)</div>
@@ -29,14 +28,37 @@
                     </select>
                     lbs
                 </div>
+            </div>
+            <!-- warning: the following next sometimes work sometimes doesn't -->
             <!--<br /><button ng-click="next(this)">Next</button><br />-->
-        </div>
-    </form>
-    <ion-list>
-        <ion-item href="#/tab/body-shape-female">
-            <img src="img/simple_next_right_arrow.jpg">
-        </ion-item>
-    <ion-list>
-    <br /><br />For debugging: {{formData}}
+            <br /><button class="button icon icon-right ion-arrow-right-a" ng-click="next(this)">Next (2 of 8)</button><br />
+            <!--<br /><a class="button icon icon-right ion-arrow-right-a" href="#/tab/body-shape-female">Next</a>-->
+            <!--
+            <br />
+            <button class="button button-block button-positive" ng-click="next()">
+                <ion-item href="#/tab/body-shape-female">
+                    <div class="ion-edit" style='text-align:center'>
+                        Next
+                    </div>
+                </ion-item>
+            </button>
+            -->
+        <!--</form>-->
+        <!--
+        <ion-list>
+            <ion-item href="#/tab/body-shape-female">
+                <img src="img/simple_next_right_arrow.jpg">
+            </ion-item>
+        <ion-list>
+        -->
+        <br /><br />For debugging: {{formData}}
     </ion-content>
 </ion-view>
+<script>
+function next() {
+            alert("Gender: " + DataStore.gender + "\n"
+                + "Birth year: " + +DataStore.birthyear + "\n"
+                + "Height: " + +DataStore.heightfeet + " ft " + DataStore.heightinches + " in" + "\n"
+                + "Weight: " + +DataStore.weight + " lbs");
+}
+</script>

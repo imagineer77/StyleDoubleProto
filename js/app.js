@@ -47,7 +47,7 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
 
   // ********************************** //
   // *** from example *** //
-    .state('signin', {
+    .state('sign-in', {
       url: '/sign-in',
       //views: {
         //'sign-in': {
@@ -56,11 +56,12 @@ angular.module('styledouble', ['ionic', 'styledouble.controllers', 'styledouble.
         //}
       //}
     })
-    .state('forgotpassword', {
+    .state('tab.forgot-password', {
       url: '/forgot-password',
       views: {
         'sign-in': {
-          templateUrl: 'templates/forgot-password.html'
+          templateUrl: 'templates/forgot-password.html',
+          controller: 'ForgotPasswordCtrl'
         }
       }
     })

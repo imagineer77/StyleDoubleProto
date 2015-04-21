@@ -1,65 +1,5 @@
 angular.module('styledouble.controllers', [])
 
-
-.factory('DataStore', function() {
-        //create datastore with default values
-        /*var DataStore = {
-         gender:         'male',
-         birthyear:      '1997',
-         heightfeet:     '5',
-         heightinches:   '0',
-         weight:         '120',
-         neck:           '14',
-         chest:          '34',
-         waist:          '30',
-         hips:           '32'
-         };*/
-
-        var DataStore = {};
-
-        DataStore.setGender = function (value) {
-            DataStore.gender = value;
-        };
-
-        DataStore.setBirthYear = function (value) {
-            DataStore.birthyear = value;
-        };
-
-        DataStore.setHeightFeet = function (value) {
-            DataStore.hieghtfeet = value;
-        };
-
-        DataStore.setHeightInches = function (value) {
-            DataStore.heightinches = value;
-        };
-
-        DataStore.setWeight = function (value) {
-            DataStore.weight = value;
-        };
-
-        DataStore.setNeck = function (value) {
-            DataStore.neck = value;
-        };
-
-        DataStore.setChest = function (value) {
-            DataStore.chest = value;
-        };
-
-        DataStore.setWaist = function (value) {
-            DataStore.waist = value;
-        };
-
-        DataStore.setHips = function (value) {
-            DataStore.hips = value;
-        };
-        /*
-         DataStore.setGapMin = function (value) {
-         DataStore.gapmin = value;
-         };
-         */
-        return DataStore;
-    })
-
     .controller('SignInCtrl', function($scope, $state) {
         $scope.signIn = function(user) {
             console.log('Sign-In', user);
@@ -67,6 +7,16 @@ angular.module('styledouble.controllers', [])
             $state.go('tab.recommendations');
             //$state.go('tab.doubles');
         };
+        /*
+        $scope.forgetPassword = function() {
+            $state.go('tab.forgot-password');
+        };
+        */
+        /*
+        $scope.createAccount = function() {
+            $state.go('tab.gender');
+        };
+        */
     })
 
     .controller('HomeCtrl', function($scope) {
@@ -98,6 +48,9 @@ angular.module('styledouble.controllers', [])
 
     .controller('ProfileCtrl', function($scope, $state) {
         $scope.text = "Profile";
+        $scope.next = function() {
+            $state.go('tab.gender');
+        };
     })
 
     .controller('DashCtrl', function($scope, $state) {
@@ -219,6 +172,7 @@ angular.module('styledouble.controllers', [])
         }
         $scope.formData.birthyear = "2015";
 
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " + $scope.formData.gender + ":" + $scope.formData.birthyear);
             DataStore.setGender($scope.formData.gender);
@@ -244,16 +198,15 @@ angular.module('styledouble.controllers', [])
         }
         $scope.formData.weight = "80";
 
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " + $scope.formData.heightfeet + ":" + $scope.formData.heightinches + ":" + $scope.formData.weight);
             DataStore.setHeightFeet($scope.formData.heightfeet);
             DataStore.setHeightInches($scope.formData.heightinches);
             DataStore.setWeight($scope.formData.weight);
-
-            if(DataStore.gender === 'female') {
+            if (DataStore.gender === 'female') {
                 $state.go('tab.body-shape-female');
-            }
-            else {
+            } else {
                 $state.go('tab.body-shape-male');
             };
         };
@@ -270,6 +223,7 @@ angular.module('styledouble.controllers', [])
             $scope.tempGender = { value: 'male' };
         }
         */
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
@@ -292,6 +246,7 @@ angular.module('styledouble.controllers', [])
             $scope.tempGender = { value: 'female' };
         }
         */
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
@@ -350,6 +305,7 @@ angular.module('styledouble.controllers', [])
         };
 
         $scope.formData ={};
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             this.setValues();
             $state.go('tab.brands-like');
@@ -363,6 +319,7 @@ angular.module('styledouble.controllers', [])
 
     .controller('MeasurementDetailsCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here???
@@ -372,6 +329,7 @@ angular.module('styledouble.controllers', [])
 
     .controller('BrandsLikeCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
@@ -381,6 +339,7 @@ angular.module('styledouble.controllers', [])
 
     .controller('MySizesCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
@@ -390,11 +349,18 @@ angular.module('styledouble.controllers', [])
 
     .controller('ClothReturnsCtrl', function($scope, $state, DataStore) {
         $scope.formData ={};
+        // TODO: data save to local if not done with AccountCtrl for the 1st time
         $scope.next = function() {
             //alert("Clicked: " );
             // Datastore set values here
             $state.go('tab.account');
         };
+    })
+
+    .controller('ForgetPasswordCtrl', function($scope, $state) {
+        //$scope.backToSignIn = function() {
+        //    $state.go('tab.profile');
+        //};
     })
 
     .controller('AccountCtrl', function($scope, $state, DataStore) {
@@ -406,6 +372,7 @@ angular.module('styledouble.controllers', [])
                 $scope.formData.passwordx.length > 0;
         };
 
+        // TODO: data save to db to create account
         $scope.finish = function() {
             if($scope.formData.password === $scope.formData.passwordx)
             {

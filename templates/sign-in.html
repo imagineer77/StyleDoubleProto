@@ -12,26 +12,29 @@
         </label>
       </div>
       <div class="padding">
-        <button class="button button-block button-positive" ng-click="signIn(user)">
+        <button class="button button-block button-positive icon-center ion-log-in" ng-click="signIn(user)">
           Sign-In
         </button>
       </div>
       <div class="padding">
         <p class="text-center">
-          <a ng-href="templates/forgot-password.html">Forgot password</a>
+          <a class="link icon icon-right ion-help" href="#/tab/forgot-password(not working)"> Forgot password</a>
+          <!--
+          <button class="link icon icon-right ion-help" ng-click="forgetPassword()">
+            Forgot Password
+          </button>
+          -->
+          <!--<a ng-href="templates/forgot-password.html">Forgot password</a>-->
         </p>
-
-        <button class="button button-block button-positive" ng-click="signIn(user)">
-          Forgot password
-        </button>
-
         <p class="text-center">
-          <a ng-href="#/tab/account">Create account</a>
+          <a class="link" href="#/tab/gender">Create account</a>
+          <!--<a ng-href="#/tab/gender">Create account</a>-->
+          <!--
+          <button class="link" ng-click="createAccount(this)">
+            Create account
+          </button>
+          -->
         </p>
-
-        <button class="button button-block button-positive" ng-click="signIn(user)">
-          Create account
-        </button>
       </div>
     </ion-content>
   </ion-view>
