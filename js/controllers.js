@@ -387,6 +387,8 @@ angular.module('styledouble.controllers', [])
                 + "Chest: " + +DataStore.chest + " in" + "\n"
                 + "Waist: " + +DataStore.waist + " in" + "\n"
                 + "Hips: " + +DataStore.hips + " in");
+                $state.go('tab.recommendations');
+                //$state.go('tab.doubles');
             } else {
                 alert("Passwords must match!");
             };
